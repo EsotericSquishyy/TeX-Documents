@@ -1,0 +1,128 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[pdftex]{graphicx}
+
+\tolerance = 10000
+
+\setlength{\oddsidemargin}{8mm}
+
+\setlength{\evensidemargin}{8mm}
+
+\setlength{\topmargin}{-5mm}
+
+\setlength{\textwidth}{145mm}
+
+\setlength{\textheight}{220mm}
+
+\setlength{\parindent}{0pt}
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+
+\newtheorem*{example}{Example}
+
+\newtheorem*{definition}{Definition}
+
+%\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand*{\lxor}{\veebar}
+
+
+
+\begin{document}
+
+\title{Homework 4}
+
+\author{Jesse Cobb - 3PM Section (Mon,Wed)}
+
+\maketitle
+
+\begin{itemize}
+
+\item[1.] 12\% of vehicle sales in 2022 were electric vehicles, 32\% were hybrid, and the remaining
+56\% were gas. A surveyor goes from parking lot to parking lot, recording the fuel option of each car one at a time. The surveyor is a bit forgetful and sometimes records the same car twice.
+\begin{itemize}
+    \item[a.] $X\sim\text{Bin}(15,.12)$ \\
+              $P(X=4)={15\choose 4}(.88)^{11}(.12)^4\approx.06937$
+
+    \item[b.] $X\sim\text{Geom}(.32)$ \\
+              $P(X=8)=(.68)^7(.32)\approx.02151$
+
+    \item[c.] $X\sim\text{NegBin}(4,.56)$ \\
+              $P(X=16)={15\choose 3}(.44)^{12}(.56)^4\approx.002356$
+
+    \item[d.] $X\sim\text{NegBin}(4,.56)$ \\
+              $E[X]=\frac{r}{p}=\frac{4}{.56}\approx7.143$
+
+    \item[e.] $X\sim\text{Bin}(25,.32)$ \\
+              $\text{Var}(X)=np=(25)(.32)(.68)=5.44$
+
+\end{itemize}
+
+\item[2.] $A=$"Infected"\\
+          $B=$"Tested Infected"\\
+          $B_6=$"Tested infected for $6$ out of $20$ tests" \\
+          $P(A)=.08$ \\
+          $P(B|A)=.75\quad P(B|A^c)=.10$ \\
+          $P(B)=P(B|A)P(A)+P(B|A^c)P(A^c)=(.75)(.08)+(.10)(.92)=.152$ \\
+          $X\sim\text{Bin}(20,P(B)=.152)$ \\
+          $P(B_6)=P(X=6)={20\choose 6}(.152)^6(.848)^{14}\approx 0.04753$ \\
+          $Y\sim\text{Bin}(20,P(B|A)=.75)$ \\
+          $P(B_6|A)=P(Y=6)={20\choose 6}(.75)^6(.25)^{14}\approx 0.00002570$ \\
+          $P(A|B_6)=\frac{P(B_6|A)P(A)}{P(B_6)}=\frac{(0.00002570)(.08)}{0.04752}\approx 0.00004326$
+
+\item[3.] A bag contains 17 red marbles and 8 blue marbles. A friend reaches in and selects 5 marbles at random, with replacement. For each red marble drawn you win \$1; for each blue marble you lose \$1. Let W denote your net winnings. \\
+$X\sim\text{Bin}(5,\frac{17}{25})$
+\begin{itemize}
+    \item[a.] $p_X(k)={5\choose k}(\frac{17}{25})^k(\frac8{25})^{5-k}$
+
+    \item[b.] $E[X]=np=(5)(\frac{17}{25})=3.4$
+
+    \item[c.] $X\sim\text{HyperGeom}(25,17,5)$ \\
+              $p_X(k)=\frac{{17\choose k}{8\choose {5-k}}}{{25\choose 5}}$
+
+\end{itemize}
+
+\item[4.] When a certain basketball player takes his first shot in a game he succeeds with probability $\frac 12$. If he misses his first shot, he loses confidence and his second shot will go in with probability $\frac 13$. If he misses his first $2$ shots then his third shot will go in with probability $\frac 14$. His success probability goes down further to $\frac 15$ after he misses his first $3$ shots. If he misses his first $4$ shots then the coach will remove him from the game.
+\begin{itemize}
+    \item[a.] $p_X(k)=$ $\begin{cases}
+        \frac12                                         &k=0 \\
+        \frac16   =(\frac12)(\frac13)                   &k=1 \\
+        \frac1{12}=(\frac12)(\frac23)(\frac14)          &k=2 \\
+        \frac1{20}=(\frac12)(\frac23)(\frac34)(\frac15) &k=3 \\
+        \frac15   =(\frac12)(\frac23)(\frac34)(\frac45) &k=4
+    \end{cases}$
+
+    \item[b.] $E[X]=0\cdot(\frac12)+1\cdot(\frac16)+2\cdot(\frac1{12})+3\cdot(\frac1{20})+4\cdot(\frac15)\approx 1.28\bar3$
+
+\end{itemize}
+
+\item[5.] $X\sim\text{DiscUnif}\{1,2,\ldots\}$ \\
+          $p_X(k)=\frac{c}{k(k+1)}$ where $c>0$
+\begin{itemize}
+    \item[a.] $1=c\sum_k \frac{1}{k(k+1)}=c\implies c=1$
+
+    \item[b.] $E[X]=\sum_k \frac{x_k}{k(k+1)}=\sum_k \frac{k}{k(k+1)}=\sum_k \frac1{k+1}=\text{DNE}$
+
+\end{itemize}
+
+\end{itemize}
+
+\end{document}
