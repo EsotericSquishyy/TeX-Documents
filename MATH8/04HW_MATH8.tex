@@ -1,0 +1,288 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+
+\usepackage[pdftex]{graphicx}
+
+\tolerance = 10000
+
+\setlength{\oddsidemargin}{8mm}
+
+\setlength{\evensidemargin}{8mm}
+ 
+\setlength{\topmargin}{-5mm}
+
+\setlength{\textwidth}{145mm}
+
+\setlength{\textheight}{220mm}
+
+\setlength{\parindent}{0pt}
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+
+\newtheorem*{example}{Example}
+
+\newtheorem*{definition}{Definition}
+
+%\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand*{\lxor}{\veebar}
+
+
+
+\begin{document}
+
+\title{Homework 4}
+
+\author{Jesse Cobb - 2PM Section}
+
+\maketitle
+
+\begin{itemize}
+
+\item[3.1.2] $T=\{(3,1),(2,3),(3,5),(2,2),(1,6),(2,6),(1,2)\}$
+\begin{itemize}
+    \item[a.] $\text{Dom}(T)=\{1,2,3\}$
+
+    \item[b.] $\text{Rng}(T)=\{1,2,3,5,6\}$
+
+    \item[c.] $T^{-1}=\{(1,3),(3,2),(5,3),(2,2),(6,1),(6,2),(2,1)\}$
+
+    \item[d.] $(T^{-1})^{-1}=\{(3,1),(2,3),(3,5),(2,2),(1,6),(2,6),(1,2)\}$
+    
+\end{itemize}
+
+\item[3.1.3] $W$ on $\mathbb{R}$, $(x,y)\in W$
+\begin{itemize}
+    \item[b.] $y=x^2+3$ \\
+              $\text{Dom}(W)=\mathbb{R}$ \\
+              $\text{Rng}(W)=\{y\in \mathbb{R}:y\ge 3\}$
+
+    \item[d.] $y=\frac 1{x^2}$ \\
+              $\text{Dom}(W)=\mathbb{R}-\{0\}$ \\
+              $\text{Rng}(W)=(0,\infty)$
+
+\end{itemize}
+
+\item[3.1.5]
+\begin{itemize}
+    \item[a.] $R=\{(x,y)\in\mathbb{R}^2:y=6x\},\text{Dom}(R)=\mathbb{R},\text{Rng}(R)=\mathbb{R}$
+    \begin{proof}
+        Let $x\in\text{Dom}(R)$. Then there exists $y\in\mathbb{R}$ so that $(x,y)\in R$ so that $y=6x$ where $6x$ is defined for all real numbers. Thus $x\in\mathbb{R}$ so $\text{Dom}(R)\subseteq \mathbb{R}$. Now let $x\in\mathbb{R}$ and if we let $y=6x$ there is always a defined $y$ so $x\in\text{Dom}(R)$, therefore $\mathbb{R}\subseteq \text{Dom}(R)$ and thus $\mathbb{R}=\text{Dom}(R)$.\\
+        Now let $y\in\text{Rng}(R)$. Then there exists $x\in\mathbb{R}$ so that $(x,y)\in R$ so that $y=6x$. Then since $y=6x$, $y\in\mathbb{R}$ since $x\in\mathbb{R}$ and therefore $\text{Rng}(R)\subseteq\mathbb{R}$. Now let $y\in\mathbb{R}$ and let $x=\frac y6$ now to find a relation $xRy$ we say $y=6(\frac y6)=y$ which shows that $y\in\text{Rng}(R)$. Therefore $\mathbb{R}\subseteq\text{Rng}(R)$ and hence $\mathbb{R}=\text{Rng}(R)$.
+    \end{proof}
+
+    \item[b.] $R=\{(x,y)\in\mathbb{R}^2:y\ge x^2\},\text{Dom}(R)=\mathbb{R},\text{Rng}(R)=[0,\infty)$
+    \begin{proof}
+        Let $x\in\text{Dom}(R)$. Then there exists $y\in\mathbb{R}$ so that $(x,y)\in R$ so that $y\ge x^2$. Since in $x^2$, $x$ is defined for all real number so $x\in\mathbb{R}$ and $\text{Dom}(R)\subseteq\mathbb{R}$. Now let $x\in\mathbb{R}$. Since $x^2$ is defined for all real numbers for $y\ge x^2$ then $x\in\text{Dom}(R)$ and thus $\mathbb{R}=\text{Dom}(R)$.\\
+        Now let $y\in\text{Rng}(R)$. Then there exists $x\in\mathbb{R}$ so that $(x,y)\in R$ so that $y\ge x^2$. Then since $x^2\ge 0$ then $y\ge 0$ so $y\in[0,\infty)$ so $\text{Rng}(R)\subseteq[0,\infty)$. Now let $y\in[0,\infty)$. To find an $x$ that is related to this $y$ let $x=\sqrt{y}$ then $y\ge x^2=\sqrt{y}^2=y$. This shows that a relationship is defined for all $y\in[0,\infty)$ so that $[0,\infty)=\text{Rng}(R)$.
+    \end{proof}
+
+\end{itemize}
+
+\item[3.1.6]
+\begin{itemize}
+    \item[b.] $R_2=\{(x,y)\in\mathbb{R}^2:y=-5x+2\}$ \\
+              $R_2^{-1}=\{(x,y)\in\mathbb{R}^2:\frac{2-x}5=y\}$
+
+\end{itemize}
+
+\item[3.1.7] $R=\{(1,5),(2,2),(3,4),(5,2)\},S=\{(2,4),(3,4),(3,1),(5,5)\},\\
+              T=\{(1,4),(3,5),(4,1)\}$
+\begin{itemize}
+    \item[a.] $R\circ S=\{(3,5),(5,2)\}$
+
+    \item[e.] $S\circ R=\{(1,5),(2,4),(5,4)\}$
+
+\end{itemize}
+
+\item[3.1.8]
+\begin{itemize}
+    \item[e.] $\{(x,y)\in\mathbb{R}^2:y=-5x+2\}\circ\{(x,y)\in\mathbb{R}^2:y=x^2+2\}\\
+              =\{(x,y)\in\mathbb{R}^2:y=-5x^2-8\}$
+
+    \item[f.] $\{(x,y)\in\mathbb{R}^2:y=x^2+2\}\circ\{(x,y)\in\mathbb{R}^2:y=-5x+2\}\\
+              =\{(x,y)\in\mathbb{R}^2:y=25x^2-20x+6)\}$
+
+\end{itemize}
+
+\item[3.1.11]
+\begin{itemize}
+    \item[a.]
+    \begin{proof}
+        ($\subseteq$) Assume $x\in\text{Rng}(R^{-1})$ then there exists a $y$ so that $(y,x)\in R^{-1}$. By definition of inverse set $(x,y)\in R$ therefore $x\in\text{Dom}(R)$. This shows that $\text{Rng}(R^{-1})\subseteq \text{Dom}(R)$.\\
+        ($\supseteq$) Now assume $x\in\text{Dom}(R)$ then there exists a $y$ so that $(x,y)\in R$. By definition of inverse set $(y,x)\in R^{-1}$ therefore $x\in\text{Rng}(R^{-1})$. So that $\text{Rng}(R^{-1})\supseteq \text{Dom}(R)$.
+        Thus we've proved that $\text{Rng}(R^{-1})=\text{Dom}(R)$ by showing they are subsets of each other.
+    \end{proof}
+
+\end{itemize}
+
+\item[3.2.1]
+\begin{itemize}
+    \item[d.] $\{(x,y)\in\mathbb{N}^2:x<y\}$ \\
+              Not Reflexive. \\
+              Not Symmetric. \\
+              Transitive.
+
+    \item[f.] $\{(x,y)\in\mathbb{N}^2:x\ne y\}$ \\
+              Not Reflexive. \\
+              Symmetric. \\
+              Not Transitive.
+
+    \item[g.] $\{(x,y)\in\mathbb{N}^2:x\mid y\}$ \\
+              Reflexive. \\
+              Not Symmetric. \\
+              Transitive.
+
+\end{itemize}
+
+\item[3.2.6]
+\begin{itemize}
+    \item[b.]
+    \begin{proof}
+        In order to prove that $R$ is an equivalence statement, consider the following:
+        \paragraph{Reflexive:}
+            Let $x\in\mathbb{N}$ so that its $10$'s digit can be written as the natural number $0\le a\le 9$. Then $x$ also has the same $a$ for its $10$'s digit. Therefore $(x,x)\in R$ so the relation is reflexive.
+        \paragraph{Symmetric:}
+            Let $x,y\in\mathbb{N}$ so that $x,y$'s $10$'s digit can be written as the natural numbers $0\le a\le 9$ and $0\le b\le 9$ respectively. Assume $(x,y)\in R$ so that $a=b$, then $b=a$. Thus $(y,x)\in R$ so the relation is symmetric.
+        \paragraph{Transitive:}
+            Now let $x,y,z\in\mathbb{N}$ so that $x,y,z$'s $10$'s digit can be written as the natural numbers $0\le a\le 9$, $0\le b\le 9$, and $0\le c\le 9$ respectively. Now assume $(x,y)\in R$ and $(y,z)\in R$ so that $a=b$ and $b=c$, thus $a=c$. Thus $(x,z)\in R$ so the relation is transitive. \\
+        Thus the $R$ is an equivalence relation as it is reflexive, symmetric, and transitive.
+    \end{proof}
+    $1\in\bar{106}\cap 1<50$ \\
+    $200\in\bar{106}\cap 150<200<300$ \\
+    $1001\in\bar{106}\cap 1000<1001$ \\
+    $30\in\bar{635}\cap 30<50$ \\
+    $230\in\bar{635}\cap 150<230<300$ \\
+    $1031\in\bar{635}\cap 1000<1031$
+        
+    \item[c.]
+    \begin{proof}
+        In order to prove that $V$ is an equivalence statement, consider the following:
+        \paragraph{Reflexive:}
+            Let $x\in\mathbb{R}$. Since $x=x$ this implies that $(x,x)\in V$ so that $V$ is reflexive.
+        \paragraph{Symmetric:}
+            Let $x,y\in\mathbb{R}$. Now assume that $(x,y)\in V$ so that $x=y$ or $xy=1$. Since $y=x$ and $yx=1$ is true by assumptions then $(y,x)\in V$ so that $V$ is symmetric.
+        \paragraph{Transitive:}
+            Let $x,y,z\in\mathbb{R}$. Now assume that $(x,y)\in V$ and $(y,z)\in V$ so that $x=y$ or $xy=1$ and $y=z$ or $yz=1$. In the case that $y=z$ simply by substitution $x=z$ or $xz=1$. In the case that $yz=1$ if $x=y$ then $xz=1$ and if $xy=1$ then $x=z$. Thus $(x,z)\in V$ so that $V$ is transitive. \\
+        Thus we've shown that $V$ is an equivalence relation as it is reflexive, symmetric, and transitive.
+    \end{proof}
+    $\bar 3=\{3,\frac13\}$ \\
+    $-\bar {\frac23}=\{-\frac23,-\frac32\}$ \\
+    $\bar 0=\{0\}$
+
+    \item[d.]
+    \begin{proof}
+        In order to prove that $R$ is an equivalence statement, consider the following:
+        \paragraph{Reflexive:}
+            Let $a\in\mathbb{N}-\{1\}$. Then $a=m2^n$ where $m\in\mathbb{N}$,$n\in\mathbb{N}\cup\{0\}$ and $2\nmid m$. By this definition $a$ and $a$ will have the same value for $n$ (numbers of prime factors of $2$) so $(a,a)\in R$. Thus the relationship is reflexive.
+        \paragraph{Symmetric:}
+            Let $a,b\in\mathbb{N}-\{1\}$. Then $a=m2^n$ and $b=x2^y$ where $m,x\in\mathbb{N}$,$n,y\in\mathbb{N}\cup\{0\}$ and $2\nmid m,x$. Now assume $(a,b)\in R$ so that $n=y$ (their number of prime factors of $2$ are the same) then $y=n$ and therefore $(b,a)\in R$. Thus the relation is symmetric.
+        \paragraph{Transitive:}
+            Let $a,b,c\in\mathbb{N}-\{1\}$. Then $a=m2^n$, $b=x2^y$, and $c=k2^j$ where $m,x,k\in\mathbb{N}$,$n,y,j\in\mathbb{N}\cup\{0\}$ and $2\nmid m,x,k$. Now assume $(a,b)\in R$ and $(b,c)\in R$ so that $n=y$ and $y=j$. Then $n=j$ therefore $a$ and $c$ have the same number of prime factors of $2$ so $(a,c)\in R$. This shows that the relation is transitive.\\
+        Thus we've shown that $R$ is an equivalence relation as it is reflexive, symmetric, and transitive.
+    \end{proof}
+    $2,3,5\in\bar{7}$\\
+    $2,3,5\in\bar{10}$ \\
+    $8,24,40\in\bar{72}$
+
+    \item[i.]
+    \begin{proof}
+        In order to prove that $T$ is an equivalence statement, consider the following:
+        \paragraph{Reflexive:}
+            Let $x\in\mathbb{R}$. Since $\sin(x)=\sin(x)$ then $(x,x)\in T$. Thus we've shown that $T$ is reflexive.
+        \paragraph{Symmetric:}
+            Let $x,y\in\mathbb{R}$. Now assume $(x,y)\in T$ so that $\sin(x)=\sin(y)$ and thus $\sin(y)=\sin(x)$ which shows that $(y,x)\in T$. Thus we've shown that $T$ is symmetric.
+        \paragraph{Transitive:}
+            Now let $x,y,z\in\mathbb{R}$. Now assume $(x,y)\in T$ and $(y,z)\in T$ so that $\sin(x)=\sin(y)$ and $\sin(y)=\sin(z)$. Then through substitution $\sin(x)=\sin(z)$ so $(x,z)\in T$ which shows that $T$ is transitive. \\
+        Thus we've shown that $T$ is an equivalence relation as it is reflexive, symmetric, and transitive.
+    \end{proof}
+    $\bar 0=\{y:y=2n\pi,n\in\mathbb{Z}\}$\\
+    $\bar {\frac\pi2}=\{y:y=2n\pi+\frac\pi2,n\in\mathbb{Z}\}$\\
+    $\bar {\frac\pi4}=\{y:y=2n\pi+\frac\pi4\lor y=2n\pi+\frac{3\pi}4,n\in\mathbb{Z}\}$
+    
+\end{itemize}
+
+\item[3.2.7]
+\begin{proof}
+        In order to prove that $R$ is an equivalence statement, consider the following:
+        \paragraph{Reflexive:}
+            Let $x\in\mathbb{Q}$. Then $x=\frac pq$ where $p,q\in\mathbb{Z}$ and $q\ne 0$. Since $pq=qp$ then $(x,x)\in R$. Thus we've shown that $R$ is reflexive.
+        \paragraph{Symmetric:}
+            Let $x,y\in\mathbb{Q}$. Then $x=\frac pq$ and $y=\frac st$ for $p,q,s,t\in\mathbb{Z}$ and $q,t\ne 0$. Now assume $(x,y)\in R$ so that $pt=qs$. Since $qs=pt$ then $(y,x)\in R$. Thus we've shown that $R$ is reflexive.
+        \paragraph{Transitive:}
+            Now let $x,y,z\in\mathbb{Q}$. Then $x=\frac pq$, $y=\frac st$, and $z=\frac jk$ for $p,q,s,t,j,k\in\mathbb{Z}$ and $q,t,k\ne 0$. Now assume $(x,y),(y,z)\in R$ so that $pt=qs$ and $sk=tj$. Then $pt=qs\implies p(\frac{sk}j)=qs\implies pk=qj$ so that $(x,z)\in R$. Thus we've shown that $R$ is transitive. \\
+        Thus we've shown that $R$ is an equivalence relation as it is reflexive, symmetric, and transitive.
+    \end{proof}
+    $\bar {\frac23}=\{y:y=\frac{a}{b},a=2n,b=3n,n\in\mathbb{Z},n\ne 0\}$
+
+\item[3.3.2]
+\begin{itemize}
+    \item[a.] $A=\{1,2,3,4\}$, $\mathscr{P}=\{\{1,2\},\{2,3\},\{3,4\}\}$ \\
+              $\varnothing\notin\mathscr{P}$ \\
+              $\{1,2\}\cap\{2,3\}\ne \varnothing$ \\
+              $\mathscr{P}$ is not a partition.
+
+    \item[c.] $A=\{1,2,3,4,5,6,7\},\mathscr{P}=\{\{1,3\},\{5,6\},\{2,4\},\{7\}\}$ \\
+              $\varnothing\notin\mathscr{P}$ \\
+              $\bigcup_{B\in\mathscr{P}}B=A$ \\
+              Pairwise disjoint \\
+              $\mathscr{P}$ is a partition.
+
+    \item[e.] $A=\mathbb{R},\mathscr{P}=(-\infty,-1)\cup[-1,1]\cup(1,\infty)$ \\
+              $\varnothing\notin\mathscr{P}$ \\
+              $\bigcup_{B\in\mathscr{P}}B=\mathbb{R}$ \\
+              Pairwise disjoint \\
+              $\mathscr{P}$ is a partition.
+
+\end{itemize}
+
+\item[3.3.3]
+\begin{itemize}
+    \item[a.] \begin{proof}
+        Assume $\mathscr{P}=\{\{-x,x\}:x\in\mathbb{N}\cup\{0\}\}$. Since $\varnothing\ne \{-x,x\}$ where $x\in\mathbb{N}\cup\{0\}$ then $\varnothing\notin\mathscr{P}$. Next if we assume $x,y\in\mathbb{N}\cup\{0\}$ are not equal ($x\ne y$) then $\{-x,x\}\cap\{-y,y\}=\varnothing$ since $x\notin\{-y,y\}$ since it is not equal to $y$ or $-y$ (Since $x\ge 0$). Finally $\bigcup_{A\in\mathscr{P}}A\subseteq\mathbb{Z}$ since for an element $x\in\bigcup_{A\in\mathscr{P}}A$ $x\in\mathbb{Z}$ and $\mathbb{Z}\subseteq\bigcup_{A\in\mathscr{P}}A$ since any integer $n\in \{\pm n,\mp n$\} so $n\in\bigcup_{A\in\mathscr{P}}A$. Then $\bigcup_{A\in\mathscr{P}}A=\mathbb{Z}$. Thus we've proved $\mathscr{P}$ is a partition of $\mathbb{Z}$
+    \end{proof}
+
+\end{itemize}
+
+\item[3.3.7]
+\begin{itemize}
+    \item[a.] $R\text{ on }\mathbb{N}$ \\
+              $\mathscr{P}=\{\{1,2,\ldots 9\},\{10,11,\ldots 99\},\{100,101,\ldots 999\},\ldots\}$ \\
+              $R$ has a relation between all numbers of $n$ digits (ex. all $2$ digit numbers are related to each other and to themselves).
+
+    \item[c.] $R\text{ on }\mathbb{R}$ \\
+              $\mathscr{P}=\{(-\infty,0),\{0\},(0,\infty)\}$ \\
+              $R$ has a relation between all negative real numbers, a relation between all positive real numbers, and a relation between each real number and itself.
+
+\end{itemize}
+
+\item[3.3.9]
+\begin{itemize}
+    \item[d.] $A=\{1,2,3,4,5\}$ \\
+              $\mathscr{P}=\{\{1,2\},\{3,4,5\}\}$ \\
+              $R=\{(1,1),(2,2),(3,3),(4,4),(5,5),\\(1,2),(2,1),(3,4),(4,3),(3,5),(5,3),(4,5),(5,4)\}$
+    
+\end{itemize}
+
+\end{itemize}
+
+\end{document}
