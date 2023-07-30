@@ -1,0 +1,225 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+
+\usepackage[pdftex]{graphicx}
+
+\tolerance = 10000
+
+\setlength{\oddsidemargin}{8mm}
+
+\setlength{\evensidemargin}{8mm}
+ 
+\setlength{\topmargin}{-5mm}
+
+\setlength{\textwidth}{145mm}
+
+\setlength{\textheight}{220mm}
+
+\setlength{\parindent}{0pt}
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+
+\newtheorem*{example}{Example}
+
+\newtheorem*{definition}{Definition}
+
+%\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand*{\lxor}{\veebar}
+
+
+
+\begin{document}
+
+\title{Homework 5}
+
+\author{Jesse Cobb - 2PM Section}
+
+\maketitle
+
+\begin{itemize}
+
+\item[3.2.9]
+\begin{itemize}
+    \item[d.] $\mathbb{Z}_7=\{\bar 0,\bar 1,\bar 2,\bar 3,\bar 4,\bar 5,\bar 6\}$
+    
+\end{itemize}
+
+\item[3.2.10]
+\begin{itemize}
+    \item[c.] Congruent to $2(\text{mod }4)$ and congruent to $8(\text{mod }6)$.\\
+              $14=2(\text{mod }4)$ and $14=8(\text{mod }6)$ \\
+              $-10=2(\text{mod }4)$ and $-19=8(\text{mod }6)$
+    
+\end{itemize}
+
+\item[3.4.1]
+\begin{itemize}
+    \item[a.] $6+6$ in $\mathbb{Z}_7$ \\
+              $\bar 6+\bar 6=\bar{12}=\bar 5$
+
+    \item[i.] $2^{25}$ in $\mathbb{Z}_7$ \\
+              $\bar{2^{25}}=\bar{2^3}^8\bar2=\bar1^8\bar2=\bar 2$
+
+    \item[j.] $5^{23}$ in $\mathbb{Z}_7$ \\
+              $\bar{5^{23}}=\bar{25}^{11}\bar5=\bar{4^{11}}\bar5=\bar{2^{22}}\bar5
+              =\bar{2^3}^7\bar{10}=\bar1^7\bar3=\bar3$
+
+    \item[k.] $4^{44}$ in $\mathbb{Z}_7$ \\
+              $\bar{4^{44}}=\bar{2^{88}}=\bar{2^3}^{29}\bar2=\bar1^{29}\bar2=\bar2$
+
+    \item[l.] $2^{26}$ in $\mathbb{Z}_7$ \\
+              $\bar{2^{25}}=\bar{2^3}^8\bar2^2=\bar1^8\bar2^2=\bar 4$
+    
+\end{itemize}
+
+\item[3.4.7]
+\begin{itemize}
+    \item[a.] $238+496-44$ in $\mathbb{Z}_9$ \\
+              $\bar{238}+\bar{496}-\bar{44}=\bar{690}=\bar{90}+\bar{450}+\bar{90}+\bar{45}+\bar{15}=\bar{15}=\bar6$
+    
+\end{itemize}
+
+\item[4.1.1]
+\begin{itemize}
+    \item[c.] $R=\{(1,2),(2,1)\}$ \\
+              $R$ is a function from $A$ to $B$ \\
+              $A=\{1,2\},B=\mathbb{N}$ or $\mathbb{Z}$
+
+    \item[e.] $R=\{(x,y)\in\mathbb{N}^2:x\le y\}$ \\
+              $R$ is not a function on $\mathbb{N}$ \\
+              Since $1\le 2$ and $1\le 1$ so $f(1)=1,2$
+
+    \item[f.] $R=\{(x,y)\in\mathbb{Z}^2:y^2=x\}$ \\
+              $R$ is not a function on $\mathbb{Z}$ \\
+              Since $1=(-1)^2=(1)^2$ so $f(1)=-1,1$ \\
+              and $x\ge 0$ since $y^2\ge 0$ so $\text{Dom}(R)\ne\mathbb{Z}$
+
+    \item[i.] $R=\{(a,3),(b,2),(c,1)\}$ \\
+              $R$ is not a function from $A$ to $B$ \\
+              Since $A=\{a,b,c,d\}$ so $\text{Dom}(R)\ne A$
+    
+\end{itemize}
+
+\item[4.1.2] $f:\mathbb{R}\to\mathbb{R}$ where $f(x)=\pm\sqrt{x}$ is not a function as $\mathbb{R}\ne\text{Dom}(R)$ since $\sqrt{x}$ is only defined when $x\ge 0$. Furthermore the function almost always has $2$ outputs for every input, an example being $f(1)=-1,1$ which deviates from the rules of a function.
+
+\item[4.1.7] \begin{proof}
+    Let $f:A\to B$ and $g:C\to D$ be functions. Now suppose $\text{Dom}(f)=\text{Dom}(g)$ and for all $x\in\text{Dom}(f),f(x)=g(x)$.
+    \paragraph{($\subseteq$):} Let $(x,y)\in f$ this means that $f(x)=y$. Since $f(x)=g(x)\implies g(x)=y$ this means $(x,y)\in g$. Thus $f\subseteq g$.
+    \paragraph{($\subseteq$):} Let $(x,y)\in g$ this means that $g(x)=y$. Since $f(x)=g(x)\implies f(x)=y$ this means $(x,y)\in f$. Thus $g\subseteq f$.\\
+    Thus we've shown that $f=g$ by double containment, if $\text{Dom}(f)=\text{Dom}(g)$ and for all $x\in\text{Dom}(f),f(x)=g(x)$.
+\end{proof}
+
+\item[4.1.13] $f:\mathbb{Z}\to\mathbb{Z}_6$
+\begin{itemize}
+    \item[a.] $f(3)=\{\ldots-3,3,9,15\ldots\}=\{6k+3:k\in\mathbb{Z}\}$
+
+    \item[b.] Image of $6=f(6)=f(0)=\bar0=\{6k:k\in\mathbb{Z}\}$
+
+    \item[c.] A pre-image of $\bar 3=3$
+
+    \item[d.] All pre-images of $\bar 1=6k+1$ where $k\in\mathbb{Z}$
+
+\end{itemize}
+
+\item[4.1.17] $\overline{\overline A}=m,\overline{\overline B}=n$
+\begin{itemize}
+    \item[a.] A function $f$ from $A$ to $B$ has $n^m$ possible forms.
+
+    \item[b.] A function $f$ with only one element in the domain from $A$ to $B$ has $n$ possible forms.
+
+\end{itemize}
+
+\item[4.1.18]
+\begin{itemize}
+    \item[a.] \begin{proof}
+        Let $f:A\to B$ where $xTy$ iff $f(x)=f(y)$ where $T$ is a relation on $A$.
+        Let $x\in A$. Since $f$ is a function each value of $x$ maps to to a single value so $f(x)=f(x)$. Thus $xTx$ so $T$ is reflexive.
+        Let $x,y\in A$. Assume $xTy$ so that $f(x)=f(y)$. This implies $f(y)=f(x)$ so $yTx$. Then $T$ is symmetric.
+        Now let $x,y,z\in A$ and $xTy$ and $yTz$ so that $f(x)=f(y)$ and $f(y)=f(z)$. This implies $f(x)=f(z)$ so $xTz$. Then $T$ is transitive.
+        Thus we've proved $T$ to be an equivalence relation on $A$.
+    \end{proof}
+
+    \item[b.] $f:\mathbb{R}\to\mathbb{R}$ is given by $f(x)=x^2$. \\
+              $\bar0=\{0\}\qquad
+              \bar2=\{4\}\qquad
+              \bar4=\{16\}$
+
+\end{itemize}
+
+\item[4.2.1]
+\begin{itemize}
+    \item[g.]
+    
+\end{itemize}
+
+\item[4.2.2]
+\begin{itemize}
+    \item[b.]
+    
+\end{itemize}
+
+\item[4.2.3]
+\begin{itemize}
+    \item[b.]
+    
+\end{itemize}
+
+\item[4.2.6]
+
+\item[4.2.7]
+
+\item[4.3.1]
+\begin{itemize}
+    \item[b.]
+
+    \item[d.]
+
+    \item[e.]
+
+    \item[h.]
+
+\end{itemize}
+
+\item[4.3.2]
+\begin{itemize}
+    \item[b.]
+
+    \item[d.]
+
+    \item[e.]
+
+    \item[h.]
+
+\end{itemize}
+
+\item[4.3.5]
+
+\item[4.3.6]
+
+\item[4.3.7]
+
+\item[4.3.8]
+
+\end{itemize}
+
+\end{document}

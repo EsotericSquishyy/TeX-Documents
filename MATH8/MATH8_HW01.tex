@@ -1,0 +1,730 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage[pdftex]{graphicx}
+
+\tolerance = 10000
+
+\setlength{\oddsidemargin}{8mm}
+
+\setlength{\evensidemargin}{8mm}
+
+\setlength{\topmargin}{-5mm}
+
+\setlength{\textwidth}{145mm}
+
+\setlength{\textheight}{220mm}
+
+\setlength{\parindent}{0pt}
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+
+\newtheorem*{example}{Example}
+
+\newtheorem*{definition}{Definition}
+
+%\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand*{\lxor}{\veebar}
+
+
+\begin{document}
+
+\title{Homework 1}
+
+\author{Jesse Cobb - 2PM Section}
+
+\maketitle
+
+\begin{itemize}
+
+\item[1.1.1]
+\begin{itemize}
+
+    \item[e.] This is a proposition.
+    \begin{align*}
+        P &\equiv "\pi \text{ is rational}" &\equiv \text{False} \\
+        Q &\equiv "17 \text{ is a prime}" &\equiv \text{True}\\
+        R &\equiv "7 < 13" &\equiv \text{True} \\
+        S &\equiv "81 \text{ is a perfect square} &\equiv \text{True} 
+    \end{align*}
+    \begin{equation*}
+        (P \land Q) \lor (R \land S) \text{ is True}
+    \end{equation*}
+
+    \item[j.] This is not a proposition (paradox)
+    \begin{align*}
+        P &\equiv "\text{There are more than three false statements in this book}" \equiv \text{True}\\
+        Q &\equiv "\text{This statement is one of them}" \\
+        Q &\equiv \neg(P \land Q) \\
+        Q &\equiv \neg P \lor \neg Q \\
+        \neg P &\equiv \text{ False} \\
+        Q &\equiv \neg Q : \text{paradox}
+    \end{align*}
+    
+\end{itemize}
+
+\item[1.1.2]
+\begin{itemize}
+
+    \item[c.] Solve $P \land Q$ and $P \lor Q$
+    \begin{align*}
+        P &\equiv "5^2+12^2=13^2" &\equiv \text{True}\\
+        Q &\equiv "\sqrt{2}+\sqrt{3}\sqrt{2+3}" &\equiv \text{False} \\
+        P \land Q &\equiv \text{False} \\
+        P \lor Q &\equiv \text{True}
+    \end{align*}
+    
+\end{itemize}
+
+\item[1.1.3]
+\begin{itemize}
+
+    \item[c.]
+    $P \land \neg Q$
+    \begin{equation*}
+    \begin{array}{cccc}
+        P & Q & \neg Q & P \land \neg Q \\
+        T & T & F & F \\
+        T & F & T & T \\
+        F & T & F & F \\
+        F & F & T & F
+    \end{array}
+    \end{equation*}
+
+    \item[l.]
+    $(P \land Q) \lor (R \land \neg S)$
+    \begin{equation*}
+    \begin{array}{cccccccc}
+        P & Q & R & S & \neg S & P\land Q & R \land \neg S & (P \land Q) \lor (R \land \neg S) \\
+        T & T & T & T & F & T & F & T \\
+        T & T & T & F & T & T & T & T \\
+        T & T & F & T & F & T & F & T \\
+        T & T & F & F & T & T & F & T \\
+        T & F & T & T & F & F & F & F \\
+        T & F & T & F & T & F & T & T \\
+        T & F & F & T & F & F & F & F \\
+        T & F & F & F & T & F & F & F \\
+        F & T & T & T & F & F & F & F \\
+        F & T & T & F & T & F & T & T \\
+        F & T & F & T & F & F & F & F \\
+        F & T & F & F & T & F & F & F \\
+        F & F & T & T & F & F & F & F \\
+        F & F & T & F & T & F & T & T \\
+        F & F & F & T & F & F & F & F \\
+        F & F & F & F & T & F & F & F \\
+    \end{array}
+    \end{equation*}
+    
+\end{itemize}
+
+\item[1.1.7]
+\begin{itemize}
+
+    \item[c.]
+    Julius Caesar was born in 1492 or 1493 and died in 1776
+    \begin{align*}
+        P &\equiv "\text{Julius Caesar was born in 1492}" &\equiv \text{False} \\
+        Q &\equiv "\text{Julius Caesar was born in 1493}" &\equiv \text{False} \\
+        R &\equiv "\text{Julius Caesar died in 1776}" &\equiv \text{False} \\
+        (P &\lor Q) \land R  &\equiv \text{False}
+    \end{align*}
+
+    \item[g.]
+    It is not the case that both -5 and 13 are elements of $\mathbb{N}$, but 4 is in the set of all rational numbers
+    \begin{align*}
+        P &\equiv "-5\in\mathbb{N}" &\equiv \text{False} \\
+        Q &\equiv "13\in\mathbb{N}" &\equiv \text{True} \\
+        R &\equiv "4\in\mathbb{Q}" &\equiv \text{True} \\
+        \neg(P &\land Q) \land R  &\equiv \text{True}
+    \end{align*}
+    
+\end{itemize}
+
+\item[1.1.10]
+\begin{itemize}
+
+    \item[c.]
+    $(P \land Q) \lor (\neg P \lor \neg Q) \equiv (P \land Q) \lor \neg (P \land Q) : \text{Tautology}$
+    \begin{equation*}
+    \begin{array}{ccccc}
+        P & Q & P \land Q & \neg(P \land Q) & (P \land Q) \lor \neg (P \land Q) \\
+        T & T & T & F & T \\
+        T & F & F & T & T \\
+        F & T & F & T & T \\
+        F & F & F & T & T 
+    \end{array}
+    \end{equation*}
+    
+\end{itemize}
+
+\item[1.1.11]
+\begin{itemize}
+
+    \item[e.]
+    Roses are read and violets are blue ($P \land Q$)
+    \begin{align*}
+        P &\equiv "\text{Roses are red}" \\
+        Q &\equiv "\text{Violets are blue}" \\
+        \neg(P &\land Q) \equiv \neg P \lor \neg Q
+    \end{align*}
+    Denial: Roses are not red or violets aren't blue.
+
+    \item[i.]
+    The function $g$ has a relative max at $x=2$ or $x=4$ and a relative min at $x=3$ ($(P \lor Q) \land R$)
+    \begin{align*}
+        P &\equiv "g\text{ has a relative max at }x=2" \\
+        Q &\equiv "g\text{ has a relative max at }x=4" \\
+        R &\equiv "g\text{ has a relative min at }x=3" \\
+        \neg((P &\lor Q) \land R) \equiv \neg(P \lor Q) \lor \neg R \equiv (\neg P \land \neg Q) \lor \neg R
+    \end{align*}
+    Denial: $g$ doesn't have a relative min at $x=3$ or $g$ doesn't have a relative max at both $x=2$ and $x=4$
+    
+\end{itemize}
+
+\item[1.1.12]
+\begin{itemize}
+
+    \item[a.]
+    $\neg\neg P\lor \neg Q \land \neg S
+    \equiv
+    (\neg (\neg P))\lor ( (\neg Q) \land (\neg S) )$
+    
+\end{itemize}
+
+\item[1.1.13]
+\begin{itemize}
+
+    \item[a.]
+    Truth Table for $A \lxor B$
+    \begin{equation*}
+    \begin{array}{ccc}
+        A & B  & A \lxor B \\
+        T & T & F \\
+        T & F & T \\
+        F & T & T \\
+        F & F & F
+    \end{array}
+    \end{equation*}
+    
+    \item[b.]
+    $(A \lor B) \land \neg(A \land B)$
+    \begin{equation*}
+    \begin{array}{ccccc}
+        A & B & A \lor B & \neg(A \land B) & (A \lor B) \land \neg(A \land B) \\
+        T & T & T & F & F \\
+        T & F & T & T & T \\
+        F & T & T & T & T \\
+        F & F & F & T & F
+    \end{array}
+    \end{equation*}
+    \begin{proof}  
+        $A \lxor B \equiv (A \lor B) \land \neg(A \land B)$ is demonstrated by the equivalent outcomes of their truth tables.
+    \end{proof}
+    
+\end{itemize}
+
+
+
+\item[1.2.2]
+\begin{itemize}
+    \item[b.] "If the moon is made of cheese, then 8 is an irrational number" \\
+        Converse - "If 8 is an irrational number, then the moon is made of cheese."\\
+        Contrapositive - "If 8 is not an irrational number, then the moon isn't made of cheese."
+
+    \item[d.] "The differentiability of $f$ is sufficient for $f$ to be continuous." \\
+        Converse - "If $f$ is continuous the function $f$ is also differentiable."\\
+        Contrapositive - "If $f$ isn't continuous then it isn't differentiable."
+    
+\end{itemize}
+
+\item[1.2.5]
+\begin{itemize}
+    \item[c.] "If $7+6=14$, then $5+5=10$" \\
+    $(7+6=14)\implies(5+5=10)\equiv$ True
+
+    \item[f.] "If Euclid's birthday was April 2, then rectangles have four sides." \\
+    "Euclid's birthday was April 2"$\implies$"rectangles have four sides"$\equiv$ True
+
+    \item[g.] "5 is prime if $\sqrt{2}$ is not irrational" \\
+    "$\sqrt{2}$ is not irrational" $\implies$ "5 is prime"$\equiv$ True
+    
+    \item[h.] "$1+1=2$ is sufficient for $3>6$" \\
+    $(1+1=2)\implies(3>6)\equiv$ False
+    
+\end{itemize}
+
+\item[1.2.6]
+\begin{itemize}
+    \item[b.] "$7+5=12$ if and only if $1+1=2$" \\
+    $(7+5=12)\iff(1+1=2)\equiv$ True
+
+    \item[c.] "$5+6=6+5$ iff $7+1=10$ \\
+    $(5+6=6+5)\iff(7+1=10)\equiv$ False
+
+    \item[g.] "$x^2\ge 0$ if and only if $x\ge 0$" \\
+    $(x^2\ge 0)\iff (x\ge 0)\equiv$ False
+    
+\end{itemize}
+
+\item[1.2.7]
+\begin{itemize}
+    \item[b.] $(\neg P\implies Q)\lor(Q\iff P)$
+    \begin{equation*}
+    \begin{array}{cccccc}
+        P & Q & \neg P & \neg P\implies Q & Q\iff P & (\neg P\implies Q)\lor(Q\iff P) \\
+        T & T & F & T & T & T \\
+        T & F & F & T & F & T \\
+        F & T & T & T & F & T \\
+        F & F & T & F & T & T
+    \end{array}
+    \end{equation*}
+
+    \item[e.] $(P\land Q)\lor(Q\land R)\implies (P\lor R)\equiv
+                Q\land(P\lor R)\implies (P\lor R)$
+    \begin{equation*}
+    \begin{array}{cccccc}
+        P & Q & R & P\lor R & Q\land (P\lor R) & Q\land(P\lor R)\implies (P\lor R) \\
+        T & T & T & T & T & T \\
+        T & T & F & T & T & T \\
+        T & F & T & T & F & T \\
+        T & F & F & T & F & T \\
+        F & T & T & T & T & T \\
+        F & T & F & F & F & T \\
+        F & F & T & T & F & T \\
+        F & F & F & F & F & T
+    \end{array}
+    \end{equation*}  
+    
+\end{itemize}
+
+\item[1.2.10]
+\begin{itemize}
+    \item[b.] "If $n$ is prime, then $n=2$ or $n$ is odd." \\
+    $(n\text{ is prime})\implies((n=2)\lor (n\mod 2 = 1))$
+    
+\end{itemize}
+
+\item[1.2.12]
+\begin{itemize}
+    \item[b.] Prove: $(P\land Q)\implies R\equiv
+               (P\land \neg R)\implies \neg Q$
+    \begin{align*}
+        &(P\land Q)\implies R \\
+        &\neg(P\land Q)\lor R \\
+        &\neg P\lor \neg Q\lor R \\
+        &(\neg P\lor R) \lor \neg Q \\
+        &\neg(P\land \neg R)\lor \neg Q \\
+        &(P\land \neg R)\implies \neg Q
+    \end{align*}
+    
+\end{itemize}
+
+\item[1.2.13]
+\begin{itemize}
+    \item[a.] The converse is true: "A function $f$ is integrable iff it is continous"
+
+    \item[b.] The converse is false: "A function $f$ is differentiable if it is continuous."
+
+    \item[c.] The contrapositive is false: Impossible
+
+    \item[d.] The contrapositive is true: "A function $f$ is differentiable if it is continuous."
+    
+\end{itemize}
+
+
+
+\item[1.3.1]
+\begin{itemize}
+    \item[f.] $((\forall\text{Person}\in\text{All People})(\text{Person is not honest}))
+          \lor \\((\forall\text{Person}\in\text{All People})(\text{Person is honest}))$
+
+    \item[g.] $(\exists\text{Person}\in\text{All People}) (\text{Person is not honest})
+         \land \\(\exists\text{Person}\in\text{All People}) (\text{Person is honest})$
+
+    \item[h.] $(\forall x\in\mathbb{R})(x\ne 0\implies(x>0\lor x<0))$
+
+    \item[i.] $(\forall x\in\mathbb{Z})(x>-4\lor x<6)$
+
+    \item[j.] $(\forall x\in\mathbb{Z})(\exists y\in\mathbb{Z})( x>y)$
+
+    \item[k.] $(\forall x\in\mathbb{Z})(\exists y\in\mathbb{Z})( x\le y)$
+
+    \item[l.] $(\forall x\in\mathbb{Z})(\forall y\in\mathbb{Z})
+                (y>x\implies (\exists  z\in\mathbb{R})(x<z \land z<y))$
+
+    \item[m.] $(\exists x\in\mathbb{Z})(\forall y\in\mathbb{Z})(x>0\implies x<y)$
+
+    \item[n.] $\neg((\exists\text{Person 1}\in\text{All People})(\forall\text{Person 2}\in\text{All People}),\\(\text{Person 1 loves Person 2}))$
+
+    \item[o.] $(\forall\text{Person 1}\in\text{All People})(\exists\text{Person 2}\in\text{All People}),\\(\text{Person 1 loves Person 2})$
+
+    \item[p.] $(\forall x\in\mathbb{R})(\exists! y\in\mathbb{R})(x>0\implies2^y=x)$
+\end{itemize}
+
+\item[1.3.2]
+\begin{itemize}
+    \item[f.] $((\exists\text{Person}\in\text{All People})(\text{Person is honest}))
+         \land \\((\exists\text{Person}\in\text{All People})(\text{Person is not honest}))$ \\
+         There exists a person that is honest and is not honest.
+
+    \item[g.] $(\forall\text{Person}\in\text{All People}, \text{Person is honest})
+          \lor \\(\forall\text{Person}\in\text{All People}, \text{Person is not honest})$ \\
+          Everyone is honest or not honest.
+
+    \item[h.] $(\exists x\in\mathbb{R})(x\ne 0\land (x\le0\land x\ge0))$ \\
+        There exists a non-zero real number $x$ that equal to zero.
+
+    \item[i.] $(\exists x\in\mathbb{Z})(x\le-4\land x\ge6)$ \\
+        There exists a real number $x$ that is both less than or equal to $-4$ and greater than or equal to 6.
+
+    \item[j.] $(\exists x\in\mathbb{Z})(\forall y\in\mathbb{Z})( x\le y)$ \\
+        There exists an integer $x$ that is less than or equal to every integer.
+
+    \item[k.] $(\exists x\in\mathbb{Z})(\forall y\in\mathbb{Z})( x> y)$ \\
+        There exists an integer $x$ that is greater than every integer.
+
+    \item[l.] $(\exists x\in\mathbb{Z})(\exists y\in\mathbb{Z})
+                (y>x\land (\forall  z\in\mathbb{R})(x\ge z \lor z\ge y))$ \\
+        There exists an integer $x$ and a greater integer $y$ that all real numbers are less than or equal to $x$ or greater than or equal to $y$.
+
+    \item[m.] $(\forall x\in\mathbb{Z})(\exists y\in\mathbb{Z})(x>0 \land x\ge y)$ \\
+        For all real numbers there exists a real number less than it.
+
+    \item[n.] $(\exists\text{Person 1}\in\text{All People})(\forall\text{Person 2}\in\text{All People}),\\(\text{Person 1 loves Person 2})$ \\
+        Someone loves everyone.
+
+    \item[o.] $(\exists\text{Person 1}\in\text{All People})(\forall\text{Person 2}\in\text{All People}),\\(\text{Person 1 hates Person 2})$ \\
+        Someone hates everyone.
+
+    \item[p.] $(\exists x\in\mathbb{R})(((\forall y\in\mathbb{R})(x>0\land2^y\ne x)) \lor
+               ((\exists y\in\mathbb{R})(\exists z\in\mathbb{R})((x>0 \land y\ne z)\implies(2^y=x \land 2^z=x))))$ \\
+        There exists a positive real number $x$ that doesn't satisfy the equation $2^y=x$ for any real number $y$ or there exists at least two unique real numbers ($y$ and $z$) that satisfy $2^y=x$ and $2^z=x$
+
+\end{itemize}
+
+\item[1.3.6]
+\begin{itemize}
+    \item[a.] $(\exists x\in\{17\})(x\text{ is odd}\implies x>8)\equiv\text{True}$ \\
+    $(\exists x\in\{6\})(x\text{ is odd}\implies x>8)\equiv\text{True}$ \\
+    $(\exists x\in\{24\})(x\text{ is odd}\implies x>8)\equiv\text{True}$ \\
+    $(\exists x\in\{2,3,7,26\})(x\text{ is odd}\implies x>8)\equiv\text{True}$
+
+    \item[b.] $(\exists x\in\{17\})(x\text{ is odd}\land x>8)\equiv\text{True}$ \\ 
+    $(\exists x\in\{6\})(x\text{ is odd}\land x>8)\equiv\text{False}$ \\ 
+    $(\exists x\in\{24\})(x\text{ is odd}\land x>8)\equiv\text{False}$ \\ 
+    $(\exists x\in\{2,3,7,26\})(x\text{ is odd}\land x>8)\equiv\text{False}$
+
+    \item[c.] $(\forall x\in\{17\})(x\text{ is odd}\implies x>8)\equiv\text{True}$ \\
+    $(\forall x\in\{6\})(x\text{ is odd}\implies x>8)\equiv\text{True}$ \\
+    $(\forall x\in\{24\})(x\text{ is odd}\implies x>8)\equiv\text{True}$ \\
+    $(\forall x\in\{2,3,7,26\})(x\text{ is odd}\implies x>8)\equiv\text{False}$
+
+    \item[d.] $(\forall x\in\{17\})(x\text{ is odd}\land  x>8)\equiv\text{True}$ \\
+    $(\forall x\in\{6\})(x\text{ is odd}\land  x>8)\equiv\text{False}$ \\
+    $(\forall x\in\{24\})(x\text{ is odd}\land  x>8)\equiv\text{False}$ \\
+    $(\forall x\in\{2,3,7,26\})(x\text{ is odd}\land  x>8)\equiv\text{False}$
+    
+\end{itemize}
+
+\item[1.3.8]
+\begin{itemize}
+    \item[a.] False, $x>0,x=-1\in\mathbb{R}$
+
+    \item[b.] True,  $x>0,x\in\mathbb{N}$
+
+    \item[c.] False, $x=3x+2,x\in\mathbb{N}$
+
+    \item[d.] False, $\ln(3)/2=\ln(x)/x$
+
+    \item[e.] False, $\ln(3)=\ln(x)/x$
+
+    \item[f.] True,  $x=\frac75$
+
+    \item[g.] False, $(x+5)(x+1)\ge 0$
+
+    \item[h.] True,  $x(x+4)+5\ge 0$
+
+    \item[i.] True,  $x=1\in\mathbb{N},41$ is prime
+
+    \item[j.] False, No infinitely predictable prime sequence
+    
+    \item[k.] False, $x=-10^{100}\in\mathbb{R}$
+    
+    \item[l.] True,  Real numbers can always be refined
+    
+\end{itemize}
+
+\item[1.3.9]
+\begin{itemize}
+    \item[a.] All natural numbers $x$ are greater than or equal to $1$.
+
+    \item[b.] There exists only a single real number $x$ that is equal to $0$.
+
+    \item[c.] If a natural number $x$ is prime and not $2$ then $x$ is odd.
+
+    \item[d.] There exists only a single real number that satisfies $\ln x=1$.
+
+    \item[e.] There doesn't exist a real number $x$ that satisfies $x^2 <0$.
+
+    \item[f.] There exists only a single real number $x$ that satisfies $x^2=0$.
+
+    \item[g.] If a natural number $x$ is odd then $x^2$ must be odd.
+    
+\end{itemize}
+
+\item[1.3.10]
+\begin{itemize}
+    \item[a.] True,  $y=-x$
+
+    \item[b.] False, All real numbers only have 1 opposite.
+
+    \item[c.] False, $x^2\ge 0$
+    
+    \item[d.] False, Positive multiplied by negative will always be negative.
+
+    \item[e.] True,  $x=0$
+
+    \item[f.] False, No smallest number exists.
+
+    \item[g.] True,  $x=y$
+
+    \item[h.] False, $y=-1,-2$
+
+    \item[i.] False, $y=\pm\sqrt{x}$
+
+    \item[j.] True,  Function passes horizontal line test.
+    
+    \item[k.] False, $(x,y)=(0,1),(0,2)$
+    
+\end{itemize}
+
+\item[1.3.13] Denials of $(\exists!x)P(x)$?
+\begin{itemize}
+    \item[a.] False, no case for any 2 existences proving $P(x)$
+
+    \item[b.] True
+
+    \item[c.] True
+
+    \item[d.] False, no case for all false
+    
+\end{itemize}
+
+
+
+\item[1.4.5]
+\begin{itemize}
+    \item[c.] \begin{proof}
+        Assume that $x$ and $y$ are even, so that $x=2k$ and $y=2j$ where $k,j\in\mathbb{Z}$. Then $xy=2k(2j)=4(kj)=4l$ where $l=kj$ is an integer. Thus we've proved that $4|xy$ when $x$ and $y$ are even.
+    \end{proof}
+
+    \item[d.] \begin{proof}
+        Assume that $x$ and $y$ are even, so that $x=2k$ and $y=2j$ where $k,j\in\mathbb{Z}$. Then $3x-5y=3(2k)-5(2j)=2(3k-5j)=2l$ where $l=3k-5j$ is an integer. Thus we've proved that $3x-5y$ is even if $x$ and $y$ are even.
+    \end{proof}
+    
+    \item[e.] \begin{proof}
+        Assume that $x$ and $y$ are odd, so that $x=2k+1$ and $y=2j+1$ where $k,j\in\mathbb{Z}$. Then $x+y=2k+1+2j+1=2k+2j+2=2(k+j+1)=2l$ where $l=k+j+1$ is an integer. Thus we've proved that $x+y$ is even if $x$ and $y$ are odd.
+    \end{proof}
+
+    \item[f.] \begin{proof}
+        Assume that $x$ and $y$ are odd, so that $x=2k+1$ and $y=2j+1$ where $k,j\in\mathbb{Z}$. Then $3x-5y=3(2k+1)-5(2j+1)=6k-10j-2=2(3k-5j-1)=2l$ where $l=3k-5j-1$ is an integer. Thus we've proved that $3x-5y$ is even if $x$ and $y$ are odd.
+    \end{proof}
+
+    \item[g.] \begin{proof}
+        Assume that $x$ and $y$ are odd, so that $x=2k+1$ and $y=2j+1$ where $k,j\in\mathbb{Z}$. Then $xy=(2k+1)(2j+1)=4kj+2k+2j+1=2(kj+k+j)+1=2l+1$ where $l=kj+k+j$ is an integer. Thus we've proved that $xy$ is odd if $x$ and $y$ are odd.
+    \end{proof}
+
+    \item[h.] \begin{proof}
+        Assume that $x$ is even and $y$ is odd, so that $x=2k$ and $y=2j+1$ where $k,j\in\mathbb{Z}$. Then $x+y=2k+2j+1=2(k+j)+1=2l+1$ where $l=k+j$ is an integer. Thus we've proved that $x+y$ is odd if $x$ is even and $y$ is odd.
+    \end{proof}
+
+    \item[i.]\begin{proof}
+        Without loss of generality, assume $x$ is even and $y$ and $z$ are odd such that $x=2k$, $y=2j+1$, and $z=2l+1$ where $x,y,z\in\mathbb{Z}$. Then, the sum of $x$, $y$, and $z$, $x+y+z=2k+2j+1+2l+1=2k+2j+2l+2=2(k+j+l+1)=2h$ where $h=k+j+l+1$ is an integer. Thus we've proved that the sum of $x$, $y$, and $z$ is even if exactly one is even.
+    \end{proof}
+
+\end{itemize}
+
+\item[1.4.6]
+\begin{itemize}
+    \item[a.] \begin{proof}
+        Let $a$ and $b$ be real numbers. Consider the following cases:
+        \paragraph{Case 1:}
+            If $a\ge 0$ and $b\ge 0$ then $|a|=a$and $|b|=b$. Then $|ab|=ab=|a||b|$.
+        \paragraph{Case 2:}
+            If $a\ge 0$ and $b< 0$ then $|a|=a$and $|b|=-b$. Then $|ab|=-(ab)=a(-b)=|a||b|$.
+        \paragraph{Case 3:}
+            If $a< 0$ and $b\ge 0$ then $|a|=-a$and $|b|=b$. Then $|ab|=-(ab)=(-a)b=|a||b|$.
+        \paragraph{Case 4:}
+            If $a< 0$ and $b< 0$ then $|a|=-a$and $|b|=-b$. Then $|ab|=ab=(-a)(-b)=|a||b|$. \\
+        Thus we've proved that $|ab|=|a||b|$ by proving its truth for every case for all real numbers $a$ and $b$.
+    \end{proof}
+
+    \item[b.] \begin{proof}
+        Let $a$ and $b$ be real numbers. Consider the following cases:
+        \paragraph{Case 1:}
+            If $a\ge b$ then $a-b\ge 0$ and $b-a\le 0$. This means $|a-b|=a-b=-(b-a)=|b-a|$.
+        \paragraph{Case 2:}
+            If $a<b$ then $a-b<0$ and $b-a> 0$. This means $|a-b|=-(a-b)=b-a=|b-a|$.
+        Thus we've proved that $|a-b|=|b-a|$ by proving its truth for every case for all real numbers $a$ and $b$.
+    \end{proof}
+        
+    \item[d.] \begin{proof}
+        Let $a$ and $b$ be real numbers so $a\le |a|$, $-a\le |a|$, $b\le |b|$, and $-b\le |b|$,. Consider the following cases:
+        \paragraph{Case 1:}
+            If $a+b\ge 0$ then $|a+b|=a+b\le |a|+|b|$.
+        \paragraph{Case 2:}
+            If $a+b< 0$ then $|a+b|=-(a+b)=-a-b\le |a|+|b|$.
+        Thus we've proved that $|a+b|\le|a|+|b|$ by proving its truth for every case for all real numbers $a$ and $b$.
+    \end{proof}
+
+    \item[e.] \begin{proof}
+        Let $a$ and $b$ be real numbers and $|a|\le b$ so that $a\le |a|$, $b\ge 0$ and $-b\le0$. Consider the following cases:
+        \paragraph{Case 1:}
+            If $a\ge 0$ then $|a|=a$ so that $a\le b$. By assumptions $-b\le |a|\le b$ is true and therefore $-b\le a\le b$.
+        \paragraph{Case 2:}
+            If $a<0$ then $|a|=-a$ so that $-a\le b$ and implicitly $a\le b$ as $-a\le|a|$. Because $-a\le b$ then we can say that $a\ge -b$ therefore $-b\le a\le b$. \\
+        Thus we've proved that $-b\le a\le b$ by proving its truth for every case for all real numbers $a$ and $b$ when $|a|\le b$.
+    \end{proof}
+
+    \item[f.] \begin{proof}
+        Let $a$ and $b$ be real numbers and $-b\le a\le b$. Consider the following cases:
+        \paragraph{Case 1:}
+            If $a\ge 0$ then $|a|=a$ so that $|a|\le b$.
+        \paragraph{Case 2:}
+            If $a<0$ then $|a|=-a$. The assumed equivalence $-b\le a$ can be morphed into $b\ge -a$ which is $b\ge |a|$.
+        Thus we've proved that $|a|\le b$ by proving its truth for every case for all real numbers $a$ and $b$ when $-b\le a\le b$.
+    \end{proof}
+
+\end{itemize}
+
+\item[1.4.7]
+\begin{itemize}
+    \item[c.] \begin{proof}
+        Assume that $a$ is odd, so that $a=2k+1$ where $k\in\mathbb{Z}$. Then $a+2=2k+1+2=2k+2+1=2(k+1)+1=2j+1$ where $j=k+1$ is an integer. Thus we've proved that $a+2$ is odd if $a$ is odd.
+    \end{proof}
+
+    \item[d.] \begin{proof}
+        Let $a$ be a real number. Consider the following cases:
+        \paragraph{Case 1:}
+            If we assume $a$ is odd, so that $a=2k+1$ where $k\in\mathbb{Z}$, then $a(a+1)=(2k+1)(2k+1+1)=(2k+1)(2k+2)=2((2k+1)(k+1))=2j$ where $j=(2k+1)(k+1)$ is an integer.
+        \paragraph{Case 2:}
+            If we assume $b$ is even, so that $a=2k$ where $k\in\mathbb{Z}$, then $a(a+1)=2k(2k+1)=2(k(2k+1))=2j$ where $j=k(2k+1)$ is an integer. \\
+        Thus we have proved that $a(a+1)$ for all integers $a$ by proving its truth for all cases.
+    \end{proof}
+    
+    \item[e.] \begin{proof}
+        Assume $a$ is an integer. We'll prove that $1|a$ for all integers. If $1|a$ then $a=1k$ for some $k\in\mathbb{Z}$. Which is equivalent to $a=k$. Thus we've proved $1|a$ by showing there always exists an integer $k$ that satisfies $a=1k$.
+    \end{proof}
+
+    \item[f.] \begin{proof}
+        Assume $a$ is an integer. We'll prove that $a|a$ for all integers. If $a|a$ then $a=ak$ for some $k\in\mathbb{Z}$. Which is equivalent to $1=k$. Thus we've proved $a|a$ by showing there always exists an integer $k$ that satisfies $a=ak$.
+    \end{proof}
+
+    \item[g.] \begin{proof}
+        Assume $a$ and $b$ are positive integer and $a|b$ so that $b=ak$ for some $k\in\mathbb{Z}$. We'll prove that if the assumptions are true then $a\le b$. Since both $a$ and $b$ are positive the equivalence statement $b=ak$ must use a $k\ge 1$, because if $k<1$ $a$ and $b$ would have opposite parities or would require $b=0$ making it no longer positive, therefore $k\in\mathbb{N}$. If $b=ak$ then $\frac bk=a$  where $k\ge 1$ and $b$ and $a$ are positive. Thus we've proved $a\le b$ if both $a$ and $b$ are positive integers and $a|b$.
+    \end{proof}
+
+    \item[h.] \begin{proof}
+        Assume $a|b$ so that $b=ak$ for some $k\in\mathbb{Z}$ and there exists an integer $c$, then $a|bc$ so that $bc=aj$ for some $j\in\mathbb{Z}$. This equivalence implies $bc=c(ak)$ and $bc=a(ck)$ where $ck=j$. Thus we've proved that if $a|b$ then $a|bc$ for any integers $a$, $b$, and $c$.
+    \end{proof}
+
+    \item[i.] \begin{proof}
+        Assume $a$ and $b$ are positive integers and $ab=1$, $a=\frac 1b$. Since $a$ is a positive integer $\frac 1b$ must be a positive integer which is only true if $b=1$ as any greater denominator will make $\frac 1b\notin\mathbb{Z}$. Any lesser denominator would make $b$ negative or $b=0$ and $\frac 10$ can't exist. If $b=1$ then by $a=\frac 1b=1$. Thus we've proved that $a=b=1$ if $a$ and $b$ are positive integers and $ab=1$.
+    \end{proof}
+
+    \item[j.] \begin{proof}
+        Assume $a$ and $b$ are positive integers, $a|b$ so that $b=ak$, and $b|a$ so that $a=bj$ for some $k,j\in\mathbb{Z}$. We'll prove $a=b$ if the assumptions are true. Since $a=bj$ then $a=akj$ which simplifies to $1=kj$ and since $k,j\in\mathbb{Z}$ then $k,j=1$ since they must each be positive. Therefore $b=ak$ can be simplified to $b=a$. Thus we've proved that $a=b$ if, for any positive integers $a$ and $b$, $a|b$ and $b|a$.
+    \end{proof}
+
+    \item[k.] \begin{proof}
+        Assume for integers $a$, $b$, $c$, and $d$ that $a|b$ so that $b=ak$ and $c|d$ so that $d=cj$ where $k,j\in\mathbb{Z}$. We'll prove that $ac|bd$ so that $bd=ach$ for some $h\in\mathbb{Z}$ if the assumptions are true. Based on the assumption $bd=ach$ is equivalent to $(ak)(cj)=ach$ therefore $(ac)(kj)=(ac)h$ which is true if $h=kj$. Thus we've proved that $ac|bd$ if, for some integers $a$, $b$, $c$, and $d$, that satisfy $a|b$ and $c|d$.
+    \end{proof}
+
+\end{itemize}
+
+\item[1.4.8]
+\begin{itemize}
+    \item[a.] \begin{proof}
+        Assume $n$ is a natural number. We'll prove $n^2+n+3$ is odd. Consider the following cases:
+        \paragraph{Case 1:}
+            If $n$ is odd, so that $n=2k+1$ for some $k\in\mathbb{Z}$ greater than or equal to $0$, then $n^2+n+3=(2k+1)^2+2k+1+3=4k^2+4k+1+2k+4=4k^2+6k+4+1=2(2k^2+3k+2)+1=2j+1$ where $j=2k^2+3k+2$ is an integer greater than or equal to $2$.
+        \paragraph{Case 2:}
+            If $n$ is even, so that $n=2k$ for some $k\in\mathbb{Z}$ greater than or equal to $1$, then $n^2+n+3=(2k)^2+2k+3=4k^2+2k+2+1=2(2k^2+k+1)+1=2j+1$ where $j=2k^2+k+1$ is an integer greater than or equal to $3$. \\
+        Thus we've proved that $n^2+n+3$ is odd if $n\in\mathbb{N}$ by showing all cases are true.
+    \end{proof}
+    
+    \item[b.] \begin{proof}
+        Assume $n$ is a natural number. We'll prove $n^2+n+3$ is odd. Since $n^2+n+3=n(n+1)+3$ and $a(a+1)$ is even for any $a\in\mathbb{Z}$ then $n(n+1)$ is even. Since $x+y$ is odd when $x$ is even and $y$ is odd, and $n(n+1)$ is even and $3$ is odd (since $3=2(1)+1$), then $n^2+n+3$ is odd. Thus we've proved $n^2+n+3$ is odd for any integer $n$ and natural numbers are within the domain of integers so it is true for all natural numbers $n$ as well.
+    \end{proof}
+
+\end{itemize}
+
+\item[1.4.9]
+\begin{itemize}
+    \item[a.] \begin{proof}
+        Assume $x$ and $y$ are both nonnegative real numbers. The statement $\frac{x+y}2\ge \sqrt{xy}$ is true iff:
+        \begin{align*}
+            \frac{(x+y)^2}{4}&\ge xy &\iff \\
+            (x+y)^2&\ge 4xy &\iff \\
+            x^2+y^2+2xy&\ge 4xy &\iff \\
+            x^2+y^2-2xy&\ge 0 &\iff \\
+            (x-y)^2&\ge 0
+        \end{align*}
+        Because the final statement is true for all nonnegative real numbers all previous statements are true including $\frac{x+y}2\ge \sqrt{xy}$. Thus we've proved for $\frac{x+y}2\ge \sqrt{xy}$ for all nonnegative real numbers.
+    \end{proof}
+    
+    \item[b.] \begin{proof}
+        Assume $a$, $b$, and $c$ are integers that satisfy $a|b$ and $a|b+c$ so that $b=ak$ and $b+c=aj$ for some $k,j\in\mathbb{Z}$. The statement $a|3c$ is true iff
+        \begin{align*}
+            3c&=ah &\iff \\
+            3(aj-b)&=ah &\iff \\
+            3aj-3b&=ah &\iff \\
+            3aj-3ak&=ah &\iff \\
+            3(j-k)&=h &\text{for some }h\in\mathbb{Z}
+        \end{align*}
+        Since the final statement is true all previous statements are true including $a|3c$ for all integers $a$, $b$, and $c$ that satisfy $a|b$ and $a|b+c$.
+    \end{proof}
+
+    \item[c.] \begin{proof}
+        Assume $a$, $b$, and $c$ are integers that satisfy $ab > 0$ and $bc < 0$. The statement "$ax^2+bx+c=0$ has two real solutions" is true iff:
+        \begin{align*}
+            x&=\frac{-b\pm\sqrt{b^2-4ac}}{2a} &\text{has two real solutions, iff} \\
+            0&<b^2-4ac &\iff \\
+            4ac&<b^2 &\text{ since }ab(bc)<0\text{ and therefore }4ac<0
+        \end{align*}
+        Since the final statement is true all previous statements are true including "$ax^2+bx+c=0$ has two real solutions." Thus we have proved that $ax^2+bx+c=0$ has two real solutions if integers $a$, $b$, and $c$ satisfy $ab > 0$ and $bc < 0$.
+    \end{proof}
+
+\end{itemize}
+
+\item[1.4.11]
+\begin{itemize}
+    \item[b.] C, this claim is correct but incorrect proof as it claims $b=aq$ for some integer $q$ but also claims $c=aq$ for the same integer $q$ which is not a correct assumption. It should be $c=ap$ for some new integer $p$, which would make the claim incorrect. But $b+c=al$ can be turned into $aq+ap=al$ which simplifies to $q+p=l$ which is true so the claim is correct.
+
+    \item[c.] F, all one must do to debunk this claim is plug in any large magnitude negative number such as $-100$ for $x$ to prove this wrong. The multiplication by $x$ is the step that incorrect logic is used as for any negative $x$ the equality should be switched.
+
+    \item[d.] A, good proof by working backward.
+
+\end{itemize}
+
+\end{itemize}
+
+\end{document}
