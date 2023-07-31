@@ -168,57 +168,142 @@
 
 \item[4.2.1]
 \begin{itemize}
-    \item[g.]
-    
+	\item[g.] $f^{-1}$ exists only when $f$ is bijective \\
+			  $f=\frac1{1-x}$ \\
+			  if $x=1-\frac1y$ then $f(x)=\frac1{1-(1-\frac1y)}=y$ so $f$ is onto \\
+			  $f:\mathbb{R}-\{1\}\to\mathbb{R}-\{0\}$ \\
+			  Assume $x_1,x_2\in\mathbb{R}-\{0\}$ and $f(x_1)-f(x_2)$ then: \\
+			  $\frac1{1-x_1}=\frac1{1-x_2}\implies 1-x_1=1-x_2\implies x_1=x_2$ \\
+			  $f$ is bijective so $f^{-1}$ exists: $f^{-1}:\mathbb{R}-\{0\}\to\mathbb{R}-\{1\}$ \\
+			  $f^{-1}(x)=1-\frac1x$
+
 \end{itemize}
 
 \item[4.2.2]
 \begin{itemize}
-    \item[b.]
-    
+    \item[b.] $f(x)=x^2+2x\qquad g(x)=2x+1$ \\
+			  $\text{Dom}(f)=\mathbb{R}\quad\text{Rng}(f)=[-1,\infty)$ \\
+			  $\text{Dom}(g)=\mathbb{R}\quad\text{Rng}(g)=\mathbb{R}$ \\
+			  $(f\circ g)(x)=(2x+1)^2+2(2x+1)=4x^2+8x+3$ \\
+			  $(g\circ f)(x)=2(x^2+2x)+1=2x^2+4x+1$
+
 \end{itemize}
 
 \item[4.2.3]
 \begin{itemize}
-    \item[b.]
+    \item[b.] $f\circ g:\mathbb{R}\to[-1,\infty)$ \\
+			  $g\circ f:\mathbb{R}\to[-1,\infty)$
     
 \end{itemize}
 
-\item[4.2.6]
+\item[4.2.6] \begin{proof}
+	Let $f:A\to B$ and $I_B:B\to B$ where $I_B(z)=z$. Now let $x\in A$ so that $f(x)=y$ where $y\in B$, so $I_B(y)=y$. This implies that $I_B(f(x))=f(x)$. Thus $I_B\circ f=f$ if $f:A\to B$ and $I_B:B\to B$.
+\end{proof}
 
-\item[4.2.7]
+\item[4.2.7] \begin{proof}
+		We can say that $\text{Dom}(f\circ f^{-1})=\text{Dom}(f^{-1})=\text{Rng}(f)$. This shows that $\text{Dom}(f\circ f^{-1})=C=\text{Dom}(I_C)$ since $I_C:C\to C$ is bijective by definition. Let $x\in C$ so thatt $I_C(x)=x$ and $f^{-1}(x)\in A$. So $f(f^{-1}(x))\in C$. So $f(f^{-1}(x))=x=I_C(x)$. Thus we've shown that $f\circ f^{-1}=I_C$ if $f$ and $f^{-1}$ are functions and $\text{Rng}(f)=C$.
+\end{proof}
 
 \item[4.3.1]
 \begin{itemize}
-    \item[b.]
+	\item[b.] \begin{proof}
+		Let $f:\mathbb{Z}\to\mathbb{Z}$ given by $f(x)=-x+1000$. Suppose $x,y\in\mathbb{Z}$ and let $x=(1000-y)\in\mathbb{Z}$ and note that:
+		\begin{align*}
+			f(x)
+			&=f(1000-y)\\
+			&=-(1000-y)+1000\\
+			&=y-1000+1000\\
+			&=y
+		\end{align*}
+		We've shown that for all $y\in\mathbb{Z}$ there exists an $x\in\mathbb{Z}$ such that $f(x)=y$. Thus $f$ is a surjection.
+	\end{proof}
 
-    \item[d.]
+\item[d.] \begin{proof}
+		Let $f:\mathbb{R}\to\mathbb{R}$ given by $f(x)=x^3$. Now suppose $x,y\in\mathbb{R}$ and let $x=\sqrt[3]{y}\in\mathbb{R}$ and note that:
+		\begin{align*}
+			f(x)
+			&=f(\sqrt[3]{y})\\
+			&=(\sqrt[3]{y})^3\\
+			&=y
+		\end{align*}
+		We've shown that for any $y\in\mathbb{R}$ there exists an $x\in\mathbb{R}$ such that $f(x)=y$. Thus we've proved that $f$ is a surjection.
+	\end{proof}
 
-    \item[e.]
+\item[e.] \begin{proof}
+		We'll show that $f:\mathbb{R}\to\mathbb{R}$, given by $f(x)=\sqrt{x^2+5}$, is not a surjection. We'll show this by contradiction and state that $f(x)=-1$. Note that:
+		\begin{align*}
+			-1=\sqrt{x^2+5}
+			&\implies (-1)^2=x^2+5 \\
+			&\implies 1-5=x^2 \\
+			&\implies \sqrt{-4}=x
+		\end{align*}
+		We've shown that $f(x)=-1$ is a contradiction as $x=\sqrt{-4}\notin\mathbb{R}$ and $-1\in\mathbb{R}$. Thus we've shown that $f$ is not a surjection by showing a value that is not mapped onto that is in the codomain.
+	\end{proof}
 
-    \item[h.]
+\item[h.] \begin{proof}
+		Let $f:\mathbb{R}^2\to\mathbb{R}$, given by $f(x,y)=x-y$, is a surjection. Let $x\in\mathbb{R}$ and $y=0\in\mathbb{R}$ so $(x,y)=(x,0)$. Then $f(x,y)=x-0=x\in\mathbb{R}$. Thus we've proved that $f$ is a surjection.
+	\end{proof}
 
 \end{itemize}
 
 \item[4.3.2]
 \begin{itemize}
-    \item[b.]
+	\item[b.] \begin{proof}
+		Let $x_1,x_2\in\mathbb{Z}$ and assume for $f:\mathbb{Z}\to\mathbb{Z}$, given by $f(x)=-x+1000$, that $f(x_1)=f(x_2)$. Note that:
+		\begin{align*}
+			f(x_1)=f(x_2)
+			&\implies -x_1=1000=-x_2+1000\\
+			&\implies -x_1=-x_2\\
+			&\implies x_1=x_2
+		\end{align*}
+		We've shown that if $f(x_1)=f(x_2)$ for $x_1,x_2\in\mathbb{Z}$ then $x_1=x_2$. Thus we've shown that $f$ is an injection.
+	\end{proof}
 
-    \item[d.]
+	\item[d.] \begin{proof}
+		Let $x_1,x_2\in\mathbb{Z}$ and assume for $f:\mathbb{R}\to\mathbb{R}$, given by $f(x)=x^3$, that $f(x_1)=f(x_2)$. Note that:
+		\begin{align*}
+			f(x_1)=f(x_2)
+			&\implies x_1^3=x_2^3\\
+			&\implies x_1=x_2
+		\end{align*}
+		We've shown that if $f(x_1)=f(x_2)$ for $x_1,x_2\in\mathbb{R}$ then $x_1=x_2$. Thus we've shown that $f$ is an injection.
+	\end{proof}
 
-    \item[e.]
+	\item[e.] \begin{proof}
+		To show that $f:\mathbb{R}\to\mathbb{R}$, given by $f(x)=\sqrt{x^2+5}$, is not an injection we simply show the case of $f(x)=\sqrt{6}$. Since $f(-1)=f(1)=\sqrt{6}$ where $-1,1\in\mathbb{R}$, we've proved that $f$ is not an injection.	
+	\end{proof}
 
-    \item[h.]
+	\item[h.] \begin{proof}
+		To show that $f:\mathbb{R}^2\to\mathbb{R}$, given by $f(x,y)=x-y$ is not an injection we simply show the case $f(x,y)=0$. Since $f(1,-1)=f(2,-2)=0$ where $(1,-1),(2,-2)\in\mathbb{R}^2$ but $(1,-1)\ne(2,-2)$ we have proved that $f$ is not an injection.
+	\end{proof}
 
 \end{itemize}
 
-\item[4.3.5]
+\item[4.3.5] \begin{proof}
+		Let $f:A\xrightarrow{\text{onto}} B$ and $g:B\xrightarrow{\text{onto}} C$. Then $\text{Rng}(f)=B$ and $\text{Dom}(g)=B$. Let $b\in B$ so that $f(a)=b$ for some $a\in A$ and $g(b)=c\in C$. Then $g(f(a))=f(b)=c$ so we've proved that $g\circ f$ is a surjection.
+\end{proof}
 
-\item[4.3.6]
+\item[4.3.6] \begin{proof}
+	Let $f:A\to B$, $g:B\to C$, and $g\circ f:A\xrightarrow{1-1} C$ be functions. Now let $x_1,x_2\in A$ and let $f(x_1)=f(x_2)$. Note that:
+	\begin{align*}
+		f(x_1)=f(x_2)
+		&\implies g(f(x_1))=g(f(x_2)) \\
+		&\implies (g\circ f)(x_1)=(g\circ f)(x_2)\\
+		&\implies x_1=x_2
+	\end{align*}
+	We've shown that if $f(x_1)=f(x_2)$ then $x_1=x_2$. Thus we've proved that if $g\circ f$ is an injection then $f$ must also be an injection.
+\end{proof}
 
-\item[4.3.7]
+\item[4.3.7] \begin{proof}
+	Let $f:A\xrightarrow{1-1} B$ be a function. Assume there exists a restriction of $f$, $f|_D$, and $x_1,x_2\in D$. Since $D\subseteq A$, by the definition of a restriction, then $x_1,x_2\in A$. Then $f(x_1)=f(x_2)\implies x_1=x_2$. Since this is true for any $x_1$ and $x_2$ in $D$ then $f|_D$ is an injection. Thus we've shown any restriction of an injection is, itself, an injection. 
+\end{proof}
 
-\item[4.3.8]
+\item[4.3.8] \begin{proof}
+		Let $h:A\xrightarrow{\text{onto}}C$, $g:B\xrightarrow{\text{onto}} D$, $A\cap B=\varnothing$ and $C\cap D=\varnothing$. Then $\text{Dom}(h\cup g)=A\cup B$ and $\text{Rng}(h\cup g)=C\cup D$. \\
+		Let $y\in C$ then $(h\cup g)(x)=h(x)$ and $h(x)$ is a surjection so for all $y$ there exists an $x\in A$ so that $(h\cup g)(x)=y$. \\
+		Let $y\in D$ then $(h\cup g)(x)=g(x)$ and $g(x)$ is a surjection so for all $y$ there exists an $x\in B$ so that $(h\cup g)(x)=y$. \\
+		Thus we've shown that in every possible case of $y\in C\cup D$ there exists an $x\in A\cup B$ so that $(h\cup g)(x)=y$, thus we've proved that $h\cup g$ is an injection.
+\end{proof}
 
 \end{itemize}
 
