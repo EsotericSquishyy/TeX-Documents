@@ -58,19 +58,31 @@
 
 \begin{itemize}
 
-\item[5.1.1]
+\item[5.1.1] \begin{proof}
+	Let $A$ be a set then $A\approx A$ since there exists a bijection $I_A:A\to A$ given by $I_A(x)=x$. Thus $\approx$ is a reflexive relation. \\
+	Let $A$ and $B$ be sets and $A\approx B$ so there exists a bijection $f:A\to B$. Then by definition there exists an inverse bijection $f^{-1}:B\to A$ so $B\approx A$. Thus $\approx$ is a symmetric relation. \\
+	Now Let $A$,$B$, and $C$ be sets and let $A\approx B$ and $B\approx C$ so that there exists bijections $f:A\to B$ and $g:B\to C$. By definition there exists a bijection $g\circ f:A\to C$ that is a composite of two bijections. This implies $A\approx C$ so $\approx$ is a transitive relation. \\
+	Thus we've shown $\approx$ to be an equivalence relation as it is reflexive, symmetric, and transitive.
+\end{proof}
 
 \item[5.1.2]
 \begin{itemize}
-    \item[a.]
+	\item[a.] $A=\{1,2,4,8,16,32,64,128,256,512\}\approx\mathbb{N}_{10}$\\
+		$f:\mathbb{N}_{10}\to A$ where $f(n)=2^{n-1}$ so $\overline{\overline A}=10$
 
-    \item[c.]
+	\item[c.] $B=\{x\in\mathbb{Z}:x^2<11\}\approx\mathbb{N}_7$ \\
+		$g:\mathbb{N}_7\to B$ where $g(n)=\begin{cases}
+			\frac n2 & 2\mid n\\
+			-\frac{n-1}2 & 2\nmid n
+		\end{cases}$ so $\overline{\overline B}=7$
 
-    \item[d.]
-    
+	\item[d.] $C=\{(x,y)\in\mathbb{N}:x+y<6\}\approx\mathbb{N}_{10}$\\
+		$h:\mathbb{N}_{10}\to C$ where $h(1,2,3,4,5,6,7,8,9,10)\\=(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3),(3,1),(3,2),(4,1)$ so $\overline{\overline C}=10$
 \end{itemize}
 
-\item[5.1.13]
+\item[5.1.13] \begin{proof}
+	
+\end{proof}
 
 \item[5.1.14]
 
