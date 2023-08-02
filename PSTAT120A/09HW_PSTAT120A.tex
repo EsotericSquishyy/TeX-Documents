@@ -60,47 +60,75 @@
 
 \item[1.]
 \begin{itemize}
-    \item[a.]
+	\item[a.] $P(X<m)=P(X-30<m-30)=.99$\\
+			  $P(X-30\ge m-30)=.01$\\
+			  $P(X-30\ge m-30)\le\frac{2^2}{(m-30)^2}=.01$\\
+			  $(m-30)^2=400\implies m-30=20\implies m=50$
 
-    \item[b.]
+		  \item[b.] $P(X<m)=P(Z<\frac{m-(30)}{\frac2{10}})=\Phi(\frac{m-(30)}{\frac2{10}})=.99$\\
+			  $\frac{10m-300}2=2.33\implies 10m=304.66\implies m=30.466$
     
 \end{itemize}
 
-\item[2.]
+\item[2.] $f_{X,Y}(x,y)=\begin{cases}
+	\frac\lambda y\cdot e^{-\lambda y} &0<x<y<\infty \\
+	0 &\text{otherwise}
+\end{cases}$
 \begin{itemize}
-    \item[a.]
+	\item[a.] $\int_{0}^\infty\int_0^y\frac\lambda y\cdot e^{-\lambda y}dxdy=\int_0^\infty\lambda\cdot e^{-\lambda y}dy=-e^{-\lambda y}]_0^\infty=1$
 
-    \item[b.]
+	\item[b.] $f_Y(y)=\int_0^y\frac\lambda y\cdot e^{-\lambda y}dx=\lambda\cdot e^{-\lambda y}$
 
-    \item[c.]
+	\item[c.] $f_{X|Y}(x|y)=\frac{\frac\lambda y\cdot e^{-\lambda y}}{\lambda e^{-\lambda y}}=\frac1y$
 
-    \item[d.]
+	\item[d.] $E[X]=\int_0^\infty E[X|Y]f_Y(y)dy=\int_0^\infty f_Y(y)\int_0^yxe^{-\lambda y}dxdy$
     
 \end{itemize}
 
-\item[3.]
+\item[3.]$\begin{array}{cc|ccc}
+&&&x&\\
+&&0&2&4\\
+\hline
+  &0 &0.02 &0.04 &0.04\\
+y &1 &0.10 &0.25 &0.15\\
+  &2 &0.08 &0.16 &0.16
+\end{array}$
 \begin{itemize}
-    \item[a.]
+	\item[a.] $P(X=x|Y=2)=\frac{P(X=x\cap Y=2)}{P(Y=2)}$\\
+			  $\begin{array}{c|ccc}
+			  			 &0 &2 &4 \\\hline
+			  P(X=x|Y=2) &\frac{.08}{.40}=.02 &\frac{.16}{.40}=.4 &\frac{.16}{.40}=.4
+			  \end{array}$
 
-    \item[b.]
+	\item[b.] $E[X|Y=2]=2(.4)+4(.4)=2.4$
 
-    \item[c.]
+	\item[c.] $SD(X|Y=2)=\sqrt{E[X^2|Y=2]-2.4^2}=\sqrt{8-5.76}\approx1.500$
 
 \end{itemize}
 
-\item[4.]
+\item[4.] $f_{X,Y}(x,y)=\begin{cases}
+	6x^2y &0\le x\le y\quad x+y\le 2\\
+	0 &\text{otherwise}
+\end{cases}$
 \begin{itemize}
-    \item[a.]
+	\item[a.] $P(Y>X+1)=6\int_1^\frac32\int_0^{y-1}x^2ydxdy+6\int_\frac32^2\int_0^{2-y}x^2ydxdy=\cdots=\frac1{64}$
 
-    \item[b.]
+	\item[b.] $f_X(x)=\int_x^{2-x}x^2ydy=2x^2(x+1)^2$ \\
+			  $f_Y(y)=\begin{cases}
+				  \int_0^yx^2ydx=\frac{y^4}3 &0\le y\le 1\\
+				  \int_0^{2-y}x^2ydx=\frac{(2-y)^3y}3 &1<y\le 2
+			  \end{cases}$
 
-    \item[c.]
+    \item[c.] No, their bounds are largely dependent on one another.
 
-    \item[d.]
+	\item[d.] $f_{Y|X=x}(y)=\begin{cases}
+				  \frac{3y}{(x+1)^2} &0\le x\le y\quad x+y\le 2\\
+				  0 &\text{otherwise}
+			  \end{cases}$
 
-    \item[e.]
+		  \item[e.] $P(Y<1|X=\frac12)=\frac3{(\frac32)^2}\int_0^1ydy=\frac23y^2]_0^1=\frac23$
 
-    \item[f.]
+		  \item[f.] $E[Y|X=\frac12]=\frac43\int y^2dy=\frac49 y^3]_0^1=\frac49$
     
 \end{itemize}
 
