@@ -71,70 +71,162 @@
 		$f:\mathbb{N}_{10}\to A$ where $f(n)=2^{n-1}$ so $\overline{\overline A}=10$
 
 	\item[c.] $B=\{x\in\mathbb{Z}:x^2<11\}\approx\mathbb{N}_7$ \\
-		$g:\mathbb{N}_7\to B$ where $g(n)=\begin{cases}
-			\frac n2 & 2\mid n\\
-			-\frac{n-1}2 & 2\nmid n
-		\end{cases}$ so $\overline{\overline B}=7$
+		$g:\mathbb{N}_7\to B$ where $g(n)=n-4$ so $\overline{\overline B}=7$
 
 	\item[d.] $C=\{(x,y)\in\mathbb{N}:x+y<6\}\approx\mathbb{N}_{10}$\\
-		$h:\mathbb{N}_{10}\to C$ where $h(1,2,3,4,5,6,7,8,9,10)\\=(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3),(3,1),(3,2),(4,1)$ so $\overline{\overline C}=10$
+		$h:\mathbb{N}_{10}\to C$ where $h(1),h(2),h(3),h(4),h(5),h(6),h(7),h(8),h(9),h(10)\\=(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3),(3,1),(3,2),(4,1)$ so $\overline{\overline C}=10$
 \end{itemize}
 
 \item[5.1.13] \begin{proof}
-	
+		Let $x\in\mathbb{N}_r$ where $r$ is a positive integer. By definition there exists an identity bijection $f:\mathbb{N}_r\to\mathbb{N}_r$ where $f(n)=n$ for all $n\in\mathbb{N}_r$. Due to this definition of the identity bijection there exists $g:\mathbb{N}_r-\{x\}\to\mathbb{N}_{r-1}$ where $g(m)=f(m)=m\in\mathbb{N}_r-\{0\}$ where there is $1$ less one-to-one mapping so $g$ is a one-to-one correspondence on $\mathbb{N}_{r-1}$. Thus we've proved that $\mathbb{N}-\{0\}\approx\mathbb{N}_{r-1}$.
 \end{proof}
 
-\item[5.1.14]
+\item[5.1.14] \begin{proof}
+		Let $\overline{\overline A}=n$ and $\overline{\overline B}=r$ where $r<n$. This implies there exists bijections $f:\mathbb{N}_n\xrightarrow{1-1}A$ and $g:B\xrightarrow{1-1}\mathbb{N}_r$. Now, seeking a contradiction, assume there exists an injection $h:A\xrightarrow{1-1}B$. This implies there exists an injection $g\circ(f\circ g):\mathbb{N}_n\xrightarrow{1-1}\mathbb{N}_r$ which is a contradiction by the Pigeonhole Principle as there is no injection from $\mathbb{N}_n\to\mathbb{N}_r$ where $r<n$. Then $h$ can't possibly be an injection. Thus we've proved there exists no injection from $A$ to $B$ if $\overline{\overline A}=n$ and $\overline{\overline B}=r$ where $r<n$.
+\end{proof}
 
 \item[5.2.2]
 \begin{itemize}
-    \item[a.]
+	\item[a.] \begin{proof}
+			Let $A=\{1,\frac12,\frac13,\frac14\ldots\}$ and $B=\{\frac12,\frac13,\frac14,\frac15\ldots\}$ where $B\subsetneq A$. There exists a function $f:A\to B$ where $f(x)=\frac 1{1+\frac1x}$. Let $x=\frac1{\frac1y-1}\in A$, note that:
+			\begin{align*}
+				f(x)
+				&=f(\frac1{\frac1y-1}) \\
+				&=\frac1{1+\frac1{\frac1{\frac1y-1}}} \\
+				&=\frac1{1+\frac1y-1} \\
+				&=\frac1{\frac1y} \\
+				&=y
+			\end{align*}
+			So we've proved $f$ to be a surjection as there always exists an $x\in A$ for all values of $y\in B$ such that $f(x)=y$. Next let $x_1,x_2\in A$ and note:
+			\begin{align*}
+				f(x_1)=f(x_2)
+				&\implies\frac1{1+\frac1{x_1}}=\frac1{1+\frac1{x_2}} \\
+				&\implies1+\frac1{x_2}=1+\frac1{x_1}\\
+				&\implies \frac1{x_2}=\frac1{x_1}\\
+				&\implies x_1=x_2
+			\end{align*}
+			So we've proved $f$ to be an injection as any two equal elements in $B$ are mapped to by the same element in $A$. Thus $f$ is a bijection showing that $A\approx B$, but since $B\subsetneq A$ then $A$ must be an infinite set. Thus we've proved $A$ to be an infinite set.
+	\end{proof}
 
-    \item[b.]
+	\item[b.] \begin{proof}
+		Let $\mathbb{N}-\mathbb{N}_{15}=\{16,17,18\ldots\}$ and $\mathbb{N}-\mathbb{N}_{16}=\{17,18,19\ldots\}$ exist as well as a function $f:\mathbb{N}-\mathbb{N}_{15}\to\mathbb{N}-\mathbb{N}_{16}$ where $f(x)=x+1$. Let $x=y-1\in\mathbb{N}-\mathbb{N}_{15}$ so that $f(x)=f(y-1)=y-1+1=y\in\mathbb{N}-\mathbb{N}_{16}$. Thus we've shown $f$ to be a surjection as there always exists an $x$ for all $y$ such that $f(x)=y$. Next note that if, for $x_1,x_2\in\mathbb{N}-\mathbb{N}_{15}$:
+		\begin{align*}
+			f(x_1)=f(x_2) \\
+			&\implies x_1+1=x_2+1\\
+			&\implies x_1=x_2
+		\end{align*}
+		So we've shown $f$ to be an injection as any two equal elements in $\mathbb{N}-\mathbb{N}_{16}$ are mapped to by two equal elements in $\mathbb{N}-\mathbb{N}_{15}$. Thus $f$ is a bijection so $\mathbb{N}-\mathbb{N}_{15}\approx\mathbb{N}-\mathbb{N}_{16}$. Since $\mathbb{N}-\mathbb{N}_{16}\subsetneq \mathbb{N}-\mathbb{N}_{15}$, this shows that $\mathbb{N}-\mathbb{N}_{15}$ is an infinite set.
+	\end{proof}
 
 \end{itemize}
 
 \item[5.2.3]
 \begin{itemize}
-    \item[c.]
+	\item[c.] \begin{proof}
+		Let $3\mathbb{Z}=\{\ldots-6,-3,0,3,6\ldots\}$ and there exist a function $f:\mathbb{Z}\to3\mathbb{Z}$ where $f(x)=3x$. Let $x=\frac y3\in\mathbb{Z}$. Note that: $f(x)=f(\frac y3)=3(\frac y3)=y$. Thus we've shown $f$ to be a surjection as there always exists an $x\in\mathbb{Z}$ for all $y\in3\mathbb{Z}$ such that $f(x)=y$. Next note when $x_1,x_2\in\mathbb{Z}$ and $f(x_1)=f(x_2)$ then $3x_1=3x_2\implies x_1=x_2$. Thus we've shown $f$ to be an injection as all same images in $3\mathbb{Z}$ have the same preimages in $\mathbb{Z}$. Since $f$ is a bijection $\mathbb{Z}\approx3\mathbb{Z}$. Since $\mathbb{N}\approx\mathbb{Z}$ then $\mathbb{N}\approx3\mathbb{Z}$ by transitivity. Thus $3\mathbb{Z}$ is denumerable.
+	\end{proof}
 
-    \item[e.]
+	\item[e.] \begin{proof}
+		Let $A=\{x:x\in\mathbb{Z}\text{ and }x<-12\}$. Then there exists a function $f:\mathbb{N}\to A$ given by $f(x)=-x-11$. Let $x=-y-11$ then $f(x)=f(-y-11)=-(-y-11)-11=y$. Thus we've shown $f$ to be a surjection as there always exists and an $x\in\mathbb{N}$ for all $y\in A$ such that $f(x)=y$. Next if $x_1,x_2\in\mathbb{N}$ then $f(x_1)=f(x_2)\implies-x_1-11=-x_2-11\implies x_1=x_2$. Thus we've shown $f$ to be an injection as each value in $\mathbb{N}$ is mapped to a unique value in $A$. Since there exists a bijection, $f$, between $\mathbb{N}$ and $A$ then $\mathbb{N}\approx A$ and therefore $A$ is denumerable.
+	\end{proof}
 
-    \item[f.]
-    
+	\item[f.] \begin{proof}
+	 Let $A=\mathbb{N}-\{5,6\}$. Then there exists a function $f:\mathbb{N}\to A$ given by $f(x)=
+		\begin{cases}
+			x &x<5\\
+			x+2 &x\ge 5
+		\end{cases}$. For the case of $x<5$ let $x=y$ so that $f(x)=f(y)=y$ and for the case that $x\ge5$ let $x=y-2$ so $f(x)=f(y-2)=y-2+2=y$ so we've shown $f$ to be a surjection as there always exists an $\in\mathbb{N}$ for either case for any $y\in A$. Then if $x_1=x_2$ where $x_1,x_2<5$ then $x_1=x_2$. If $x_1,x_2\ge5$ then $x_1+2=x_2+2\implies x_1=x_2$. Then finally, without loss of generality, if $x_1<5$ and $x_2\ge5$ then $x_1=x_2+2$ which is impossible as $x_2>x_1$. Thus we've shown $f$ to be an injection for all $x_1,x_2\in\mathbb{N}$. Since $f$ is a bijection between $\mathbb{N}$ and $A$ we can say that $A$ is denumerable.
+	\end{proof}
+
 \end{itemize}
 
 \item[5.2.4]
 \begin{itemize}
-    \item[a.]
+	\item[a.] \begin{proof}
+		Let $f:(0,1)\to(1,\infty)$ be a function given by $f(x)=\frac1{x}$. Let $x=\frac1y\in(0,1)$ then note $f(x)=f(\frac1y)=\frac1{\frac1y}=y$, thus $f$ is a surjection as there always exists an $x\in(,1)$ for all $y\in(1,\infty)$ so that $f(x)=y$. Next assume for $x_1,x_2\in(0,1)$ that $f(x_1)=f(x_2)\implies \frac1{x_1}=\frac1{x_2}\implies x_2=x_1$, thus $f$ is an injection for all $x_1,x_2\in(0,1)$. Since there exists a bijection, $f$, between $(0,1)$ and $(1,\infty)$ then $(0,1)\approx(1,\infty)$. Since $\overline{\overline{(0,1)}}=\mathfrak{c}$ then $\overline{\overline{(1,\infty)}}=\mathfrak{c}$.
+	\end{proof}
 
-    \item[b.]
+	\item[b.] \begin{proof}
+			Let $f:(0,1)\to(a,\infty)$ be a function given by $f(x)=\frac1x+a-1$. Let $x=\frac1{y-a+1}\in(0,1)$ then note $f(x)=f(\frac1{y-a+1})=a+\frac1{\frac1{y-a+1}}=a-1+y-a+1=y$, thus $f$ is a surjection as there always exists an $x\in(0,1)$ for any $y\in(a,\infty)$ such that $f(x)=y$. Additionally if $x_1,x_2\in(0,1)$ and we assume $f(x_1)=f(x_2)$ then $\frac1{x_1}+a-1=\frac1{x_2}+a-1\implies\frac1{x_1}=\frac1{x_2}\implies x_2=x_1$ so $f$ is an injection. Since a bijection, $f$, exists between $(0,1)$ and $(a,\infty)$ then $(0,1)\approx(a,\infty)$. Thus $\overline{\overline{(a,\infty)}}=\mathfrak{c}$.
+	\end{proof}
 
 \end{itemize}
 
-\item[5.3.1]
+\item[5.3.1] $f(28)=9$
 
-\item[5.3.4]
+\item[5.3.4] \begin{proof}
+	Let $f:\mathbb{N}\xrightarrow{biject}A$ and $g:\mathbb{N}\xrightarrow{biject}B$. Define $h:\mathbb{N}\to A\cup B$:
+	\begin{equation*}
+		h(n)=\begin{cases}
+			f(\frac{n+1}2) &2\nmid n\\
+			g(\frac n2) &2\mid n
+		\end{cases}
+	\end{equation*}
+	Let $n=2y-1\in\mathbb{N}$ where $y\mathbb{N}$ and therefore $2\nmid n$ then note:
+	\begin{align*}
+		h(n)&=h(2y-1) \\
+			&=f(\frac{2y-1+1}2) \\
+			&=f(y)\in A \\
+			&=f(y)\in A\cup B
+	\end{align*}
+	Now let $n=2y\in\mathbb{N}$ where $y\in\mathbb{N}$ so $2\mid n$ then note:
+	\begin{align*}
+		h(n)&=h(2y)\\
+			&=g(\frac{2y}2)\\
+			&=g(y)\in B \\
+			&=g(y)\in A\cup B
+	\end{align*}
+	Thus we've shown $h$ to be a surjection as there exists an $n\in\mathbb{N}$ for any $f(y),g(y)\in A\cup B$. Next assume $n_1,n_2\in\mathbb{N}$, first let $2\nmid n_1,n_2$ so:
+	\begin{align*}
+		h(n_1)=h(n_2)
+		&\implies f(\frac{n_1+1}2)=f(\frac{n_2+1}2)\\			 
+		&\implies(f^{-1}\circ f)(\frac{n_1+1}2)=(f^{-1}\circ f)(\frac{n_2+1}2) \\
+		&\implies\frac{n_1+1}2=\frac{n_2+1}2\\
+		&\implies n_1=n_2
+	\end{align*}
+	Similarly if $2\mid n_1,n_2$ note:
+	\begin{align*}
+		h(n_1)=h(n_2)
+		&\implies g(\frac{n_1}2)=f(\frac{n_2}2)\\			 
+		&\implies(g^{-1}\circ g)(\frac{n_1}2)=(g^{-1}\circ g)(\frac{n_2}2) \\
+		&\implies\frac{n_1}2=\frac{n_2}2\\
+		&\implies n_1=n_2
+	\end{align*}
+	Without loss of generality $2\mid n_1$ and $2\nmid n_2$ is not possible as $g$ and $f$ map to disjoint sets. Thus we've shown $h$ to be an injection. Thus $h$ is a bijection from $\mathbb{N}$ to $A\cup B$ so $\mathbb{N}\approx A\cup B$. Thus we've proven $A\cup B$ to be denumerable.
+\end{proof}
 
 \item[5.3.13]
 \begin{itemize}
-    \item[a.]
+	\item[a.] \begin{proof}
+			Let $A=\mathbb{R}-\mathbb{Q}$ be the set of all irrationals. Since $\mathbb{R}=\mathbb{Q}\cup A$ by definiton, then $A$ must be uncountable as we know $\mathbb{R}$ is uncountable so it can't be the union of two countable sets and $\mathbb{Q}$ is countable. Thus $A$, the set of all irrationals, must be uncountable.
+	\end{proof}
 
 \end{itemize}
 
 \item[5.4.1]
 \begin{itemize}
-    \item[a.]
+	\item[a.] $\mathbb{N}\subsetneq \mathbb{N}-\{0\}$\\
+			  $\overline{\overline{\mathbb{N}}}=\overline{\overline{\mathbb{N}-\{0\}}}=\aleph_0$
 
-    \item[b.]
+	\item[b.] $\mathbb{N}\subsetneq\mathbb{Z}$ \\
+			  $\overline{\overline{\mathbb{N}}}=\overline{\overline{\mathbb{Z}}}=\aleph_0$
 
-    \item[c.]
+	\item[c.] $\mathbb{R}-\mathbb{Q}\subsetneq\mathbb{R}$ \\
+			  $\overline{\overline{\mathbb{R}-\mathbb{Q}}}=\overline{\overline{\mathbb{R}}}=\mathfrak{c}$
 
-    \item[d.]
+	\item[d.] $\mathbb{N}-\{0\}\times\mathbb{N}\subsetneq\mathbb{N}\times\mathbb{N}$ \\
+		$\overline{\overline{\mathbb{N}-\{0\}\times\mathbb{N}}}=\overline{\overline{\mathbb{N}\times\mathbb{N}}}=\aleph_0^2$
     
 \end{itemize}
 
-\item[5.4.5]
+\item[5.4.5] \begin{proof}
+		Let $A$ be a set. We'll prove that there exists no largest cardinal number by showing that $\overline{\overline A}<\overline{\overline{\mathscr P(A)}}$. So for any set there is a set with a larger cardinal number.
+		To prove this we will show that the function $f:A\to\mathscr P(A)$ given by $f(x)=\{x\}$ is an injection. If $x,y\in A$ and $f(x)=f(y)$ then $\{x\}=\{y\}\implies x=y$ which shows $f$'s bijectivity. This shows that $\overline{\overline A}\le\overline{\overline{\mathscr P(A)}}$. Now to show $\overline{\overline A}\ne\overline{\overline{\mathscr P(A)}}$.
+		Seeking a contradiction suppose $A\approx\mathscr P(A)$ so that there exists a bijection $g:A\xrightarrow[onto]{1-1}\mathscr P(A)$. Now define set $B=\{y\in A:y\notin g(y)\}\in\mathscr P(A)$. Since $g$ is a surjection there exists a $z\in A$ so that $g(z)=B$, now consider the following cases. \\
+		Case 1: If $z\in B$ then, by definition of $B$, $z\notin g(z)$ which is a contradiciton as $g(z)=B$. \\
+		Case 2: If $z\notin B$ then, by definition of $B$, $z\in g(z)$ which is a contradiciton as $g(z)=B$. \\
+		Thus we've shown that it is not possible for $g$ to be a surjection so $\overline{\overline A}\ne\overline{\overline{\mathscr P(A)}}$. Thus we've shown that $\overline{\overline A}<\overline{\overline{\mathscr P(A)}}$ for any set $A$. We can use this fact to show that there exists no largest cardinal number as any cardinal number is attached to the size of a set but there is no largest size for a set as $\overline{\overline A}<\overline{\overline{\mathscr P(A)}}$. Thus we've proved there exists no largest cardinal number.
+\end{proof}
 
 \end{itemize}
 
