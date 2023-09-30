@@ -1,0 +1,102 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage{tensor}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    %\qed
+    }
+\newcommand{\dbar}{d\hspace*{-0.08em}\bar{}\hspace*{0.1em}} %You can use \newcommand to create certain new commands, either abbreviations for other commands or even entirely new ones (like this one)
+\newcommand{\Cl}{\text{Cl}}
+\newcommand{\Int}{\text{Int}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\id}{\text{id}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+%Various possibilities for "types" of question
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{coro}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prob}[theorem]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{eg}{e.g}
+\newtheorem*{recall}{Recall}
+\newtheorem*{fact}{Fact}
+\newtheorem*{notation}{Notation}
+
+\pagestyle{fancyplain}
+\headheight 42pt
+\chead{\textbf{\Large Assignment Name Here}} %This one for assignment name
+\rhead{Date here \\ Name here \\ Class here} %This one for date/name/class
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+\linespread{1.5}
+
+\begin{document}
+
+\section{Question 1} %Problem 1 goes within this section
+
+\begin{prob} %Can use various commands depending on what exactly a given problem asks you to do
+Problem 1 statement here.
+\end{prob}
+
+\begin{sol}
+Solution to Problem 1 here.
+\end{sol}
+
+\section{Question 2} %Problem 2 goes within this section
+
+\begin{prop}
+Statement you are being asked to prove.
+\end{prop}
+
+\begin{proof}
+Proof of proposition we are proving in problem 2 here.
+\end{proof}
+
+\section{Question $n$} %Problem n goes within this section
+
+\begin{prob}
+Problem $n$ statement here.
+\end{prob}
+
+\begin{sol}
+Solution to problem $n$ solution.
+\end{sol}
+
+
+\end{document}
