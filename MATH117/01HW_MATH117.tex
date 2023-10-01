@@ -1,0 +1,291 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage{tensor}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    %\qed
+    }
+\newcommand{\dbar}{d\hspace*{-0.08em}\bar{}\hspace*{0.1em}} %You can use \newcommand to create certain new commands, either abbreviations for other commands or even entirely new ones (like this one)
+\newcommand{\Cl}{\text{Cl}}
+\newcommand{\Int}{\text{Int}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\id}{\text{id}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+%Various possibilities for "types" of question
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{coro}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prob}[theorem]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{eg}{e.g}
+\newtheorem*{recall}{Recall}
+\newtheorem*{fact}{Fact}
+\newtheorem*{notation}{Notation}
+
+\pagestyle{fancyplain}
+\headheight 42pt
+\chead{\textbf{\Large Homework 1}} %This one for assignment name
+\rhead{09.30.23 \\ Jesse Cobb \\ Math 117} %This one for date/name/class
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+\linespread{1.5}
+
+\begin{document}
+
+\section{Exercises} %Problem 1 goes within this section
+\begin{itemize}
+
+\item[1.1] For each $x$, the additive inverse is unique.
+\begin{proof}
+We will prove that the additive inverse of $x\in\mathbb{R}$ is unique. Let $y,y'\in\mathbb{R}$ both be additive inverses of $x$ such that $y+x=0=y'+x$. Consider the following:
+\begin{align*}
+    y &= 0+y    &\text{(Additive Identity)} \\
+      &= y'+x+y &\text{(Additive Inverse)} \\
+      &= y'+y+x &\text{(Commutative)} \\
+      &= y'+0   &\text{(Additive Inverse)} \\
+      &= y'     &\text{(Additive Identity)}
+\end{align*}
+Thus, we've shown that $y=y'$ proving that the additive inverse of any element $x\in\mathbb{R}$ is unique.
+\end{proof}
+
+\item[1.2] The additive identity element $0$ is unique.
+\begin{proof}
+We will prove that the additive identity, $0\in\mathbb{R}$, is unique. Let $0,0'\in\mathbb{R}$ both be additive identities for $\mathbb{R}$ such that $0+x=x$ and $0'+x=x$ for all $x\in\mathbb{R}$. This implies that $0=0'+0=0+0'=0'$ by the commutative and additive identity axioms. This shows that $0=0'$ which means that there exists only one unique additive identity $0$.
+\end{proof}
+
+\item[1.3] The multiplicative identity element $1$ is unique.
+\begin{proof}
+We will prove that the multiplicative identity, $1\in\mathbb{R}$, is unique. Let $1,1'\in\mathbb{R}$ both be multiplicative identities for $\mathbb{R}$ such that $1\cdot x=x$ and $1'\cdot x=x$ for all $x\in\mathbb{R}$. This implies that $1=1'\cdot 1=1\cdot 1'=1'$ by the commutative and multiplicative identity axioms. This shows that $1=1'$ which means that there exists only one unique multiplicative identity $1$.
+\end{proof}
+
+\item[1.4] $x\cdot 0=0$ where $0\in\mathbb{R}$ is the additive identity of $\mathbb{R}$.
+\begin{proof}
+We will prove that any the additive identity, $0\in\mathbb{R}$, multiplied ($\cdot$) by any element $x\in\mathbb{R}$ is the additive identity such that $x\cdot 0=0$. By the additive inverse and distributive axioms $x\cdot 0 = x\cdot (0+0)= x\cdot 0+x\cdot 0$. Since $x\cdot 0\in\mathbb{R}$ there exists an additive inverse $y\in\mathbb{R}$. With this consider the following:
+\begin{align*}
+    x\cdot 0 = x\cdot 0+x\cdot 0 &\implies y+x\cdot 0 = y+x\cdot 0+x\cdot 0 \\
+                                 &\implies 0 = 0+x\cdot 0 \\
+                                 &\implies 0 = x\cdot 0
+\end{align*}
+Thus, we've shown $x\cdot 0=0$ using the additive inverse axiom of ordered fields.
+\end{proof}
+
+\item[1.5] $-x=(-1)\cdot x$ where $-x\in\mathbb{R}$ is the additive inverse of $x\in\mathbb{R}$.
+\begin{proof}
+We will prove that the additive inverse $-x\in\mathbb{R}$ of the element $x\in\mathbb{R}$ is equal to $(-1)\cdot x$. Consider the following:
+\begin{align*}
+    0 &= 0\cdot x              &\text{(Proof 1.4)} \\
+      &= (1+(-1))\cdot x       &\text{(Additive Inverse)} \\
+      &= 1\cdot x +(-1)\cdot x &\text{(Distributive)} \\
+      &= x+(-1)\cdot x         &\text{(Multiplicative Inverse)} \\
+      &= (-1)\cdot x+x         &\text{(Commutative)}
+\end{align*}
+Thus, we've shown $(-1)\cdot x+x=0$. Now consider the following:
+\begin{align*}
+    (-1)\cdot x+x=0 &\implies (-1)\cdot x+(-x)+x=-x \\
+                    &\implies (-1)\cdot x+0 = -x &\text{(Additive Inverse)} \\
+                    &\implies (-1)\cdot x = -x   &\text{(Additive Identity)}
+\end{align*}
+Thus, we've shown the additive inverse $-x\in\mathbb{R}$ of the element $x\in\mathbb{R}$ is equal to $x$ multiplied by the inverse of the additive inverse of the multiplicative identity $-1\in\mathbb{R}$.
+\end{proof}
+
+\end{itemize}
+
+\section{Proposition 1} %Problem 2 goes within this section
+\begin{itemize}
+    
+\item[2.1] For all $x,y\in\mathbb{R}$ if $x<y$ then $-y<-x$.
+\begin{proof}
+We will prove that for the elements $x,y\in\mathbb{R}$ if $x<y$ then their respective additive inverses $-x,-y\in\mathbb{R}$ satisfy $-y<-x$. Consider the following:
+\begin{align*}
+    x<y &\implies (-x)+x < (-x)+y \\
+        &\implies 0 < (-x)+y            &\text{(Additive Inverse)} \\
+        &\implies (-y)+0 < (-y)+(-x)+y \\
+        &\implies (-y)+0 < (-x)+(-y)+y  &\text{(Commutative)} \\
+        &\implies (-y)+0 < (-x)+0       &\text{(Additive Inverse)} \\
+        &\implies -y < -x               &\text{(Additive Identity)} \\
+\end{align*}
+Thus, we've shown that if $x<y$ where $x,y\in\mathbb{R}$ then $-y<-x$ for their respective additive inverses $-x,-y\in\mathbb{R}$.
+\end{proof}
+
+\item[2.2] $0<1$.
+\begin{proof}
+We will prove that the additive identity $0\in\mathbb{R}$ is less than the multiplicative identity $1\in\mathbb{R}$ such that $0<1$. Seeking a contradiction assume either $1<0$ or $0=1$ by the Law of Trichotomy. Consider the following:
+\begin{align*}
+    1<0 &\implies 0<-1                      &\text{(Proof 2.1)} \\
+        &\implies (-1)\cdot 0<(-1)\cdot(-1) &\text{(Multiplication by Positive (11))} \\
+        &\implies 0<(-1)\cdot (-1)          &\text{(Proof 1.4)} \\
+        &\implies 0<1                       &\text{(Proof 1.5)}
+\end{align*}
+Thus, we've shown the statement $1<0$ results in a contradiction as it makes $0<1$ so $1<0$ is not true. Now let $x,y\in\mathbb{R}$ not be equal. By Proof 1.4 we can say $x\cdot 0=0=y\cdot 0$ but $x\cdot 1=x\ne y$ thus $0\ne 1$. By the Law of Trichotomy and contradiction we've proven that $0<1$ where $0\in\mathbb{R}$ is the additive identity and $1\in\mathbb{R}$ is the multiplicative identity.
+\end{proof}
+
+\item[2.3] For all $x,y\in\mathbb{R}$ if $0<x<y$ then $0<1/y<1/x$.
+\begin{proof}
+We will show that for any two elements $x,y\in\mathbb{R}$, if $0<x<y$ then their respective multiplicative inverses $1/x,1/y\in\mathbb{R}$ satisfy $0<1/y<1/x$. Consider the following:
+\begin{align*}
+    0<x<y &\implies (1/x)\cdot 0 < (1/x)\cdot x < (1/x)\cdot y \\
+          &\implies 0 < (1/x)\cdot x < (1/x)\cdot y &\text{(Proof 1.4)} \\
+          &\implies (1/y)\cdot 0 < (1/y)\cdot (1/x)\cdot x < (1/y)\cdot (1/x)\cdot y \\
+          &\implies 0 < (1/y)\cdot (1/x)\cdot x < (1/y)\cdot (1/x)\cdot y &\text{(Proof 1.4)} \\
+          &\implies 0 < (1/y)\cdot 1 < (1/y)\cdot (1/x)\cdot y &\text{Multiplicative Inverse} \\
+          &\implies 0 < (1/y)\cdot 1 < (1/x)\cdot (1/y)\cdot y &\text{Commutative} \\
+          &\implies 0 < (1/y)\cdot 1 < (1/x)\cdot 1 &\text{Multiplicative Inverse} \\
+          &\implies 0 < (1/y) < (1/x) &\text{Multiplicative Identity} \\
+\end{align*}
+Thus, we've shown that for the elements $x,y\in\mathbb{R}$ if $0<x<y$ then their respective multiplicative inverses $1/x,1/y\in\mathbb{R}$ satisfy $0<1/y<1/x$.
+\end{proof}
+
+\item[2.4] For all $x,y,z\in\mathbb{R}$ if $x<y$ and $z<0$, then $y\cdot z<x\cdot z$.
+\begin{proof}
+We will prove that for the elements $x,y,z\in\mathbb{R}$ if $x<y$ and $z<0$, then $y\cdot z<x\cdot z$. Now let a multiplicative inverse of $z$ exist, $-z\in\mathbb{R}$, so that $0<-z$ by Proof 2.1. Consider the following:
+\begin{align*}
+    x<y &\implies x\cdot (-z)<y\cdot (-z) &\text{(Multiplication by Positives (11))} \\
+        &\implies -(y\cdot (-z))<-(x\cdot (-z)) &\text{(Proof 2.1)} \\
+        &\implies (-1)\cdot y\cdot (-z)<(-1)\cdot x\cdot (-z) &\text{(Proof 1.5)} \\
+        &\implies y\cdot)(-1)\cdot(-z)<x\cdot((-1)\cdot(-z)) &\text{Commutative and Associative)} \\
+        &\implies y\cdot z< x\cdot z &\text{Proof 1.5}
+\end{align*}
+Thus, we've shown that for the elements $x,y,z\in\mathbb{R}$ if $x<y$ and $z<0$ then $y\cdot z<x\cdot z$.
+\end{proof}
+
+\item[2.5] For all $x\in\mathbb{R}$ then $x^2\ge 0$.
+\begin{proof}
+We will prove that any element $x\in\mathbb{R}$ multiplied by itself is greater than or equal to the additive identity $0\in\mathbb{R}$, such that $x^2\ge 0$. Consider the following cases by the Law of Trichotomy:
+\begin{description}
+    \item[Case 1] Let $x>0$, then consider the following:
+    \begin{align*}
+        x>0 &\implies x\cdot x>0\cdot x &\text{(Multiplying by Positive (11))} \\
+            &\implies x^2>0\cdot x      &\text{(Definition of Square)} \\
+            &\implies x^2>0             &\text{(Proof 1.4)}
+    \end{align*}
+    So we've shown that if $x>0$ then $x^2>0$.
+    \item[Case 2] Now let $x<0$, then consider the following:
+    \begin{align*}
+        x<0 &\implies x\cdot x>0\cdot x &\text{(Proof 2.1)} \\
+            &\implies x^2>0\cdot x      &\text{(Definition of Square)} \\
+            &\implies x^2>0             &\text{(Proof 1.4)}
+    \end{align*}
+    So we've shown that if $x<0$ then $x^2>0$.
+    \item[Case 3] Finally let $x=0$, then consider the following:
+    \begin{align*}
+        x=0 &\implies x\cdot x=0\cdot x \\
+            &\implies x^2=0\cdot x &\text{(Definition of Square)} \\
+            &\implies x^2=0        &\text{(Proof 1.4)}
+    \end{align*}
+    So we've shown that if $x=0$ then $x^2=0$.
+\end{description}
+Thus, we've shown by the Law of Trichotomy that all elements $x\in\mathbb{R}$ satisfy $x^2\ge 0$.
+\end{proof}
+    
+\end{itemize}
+
+\section{Proposition 2} %Problem n goes within this section
+\begin{definition}
+    For $x\in\mathbb{R}$ we define $|x|$, the $\text{ABSOLUTE VALUE}$ of $x$ to be
+    $$|x|=\begin{cases}
+        x,  &x\ge 0\\
+        -x, &x<0
+    \end{cases}$$
+\end{definition}
+\begin{itemize}
+    
+\item[3.1] For $x,y\in\mathbb{R}$ then $|x\cdot y|=|x|\cdot |y|$.
+\begin{proof}
+We will prove that any elements $x,y\in\mathbb{R}$ satisfy $|x\cdot y|=|x|\cdot |y|$ by Definition 3.1. Consider the following cases:
+\begin{description}
+    \item[Case 1] Let $x,y\ge 0$, so that $x=|x|$ and $y=|y|$. By the Multiplication by Positives axioms (11) $x\cdot y\ge0$ such that $x\cdot y=|x\cdot y|$ by Definition 3.1. Consider the following:
+    \begin{align*}
+        |x|\cdot|y| &= x\cdot y   &\text{(Assumptions)}\\
+                    &= |x\cdot y| &\text{(Assumptions)}
+    \end{align*}
+    So we've shown if $x,y\ge 0$ then $|x\cdot y|=|x|\cdot |y|$.
+    \item[Case 2] Let $x,y<0$ and by Proof 2.1 $-x,-y>0$, so that $-x=|x|$ and $-y=|y|$ where $-x,-y\in\mathbb{R}$ are the additive inverses of $x,y\in\mathbb{R}$. $x\cdot y>0$ by Proof 2.4 so that $x\cdot y=|x\cdot y|$. Consider the following:
+    \begin{align*}
+        |x|\cdot|y| &= (-x)\cdot (-y)                   &\text{(Assumptions)} \\
+                    &= (-1)\cdot x\cdot (-1)\cdot y     &\text{(Proof 1.5)} \\
+                    &= ((-1)\cdot (-1))\cdot(x\cdot y)  &\text{(Associativity)} \\
+                    &= 1\cdot (x\cdot y)                &\text{(Proof 1.5)} \\
+                    &= x\cdot y                         &\text{(Multiplicative Identity)} \\
+                    &= |x\cdot y|                       &\text{(Assumptions)}
+    \end{align*}
+    So we've shown if $x,y< 0$ then $|x\cdot y|=|x|\cdot |y|$.
+    \item[Case 3] Without loss of generality, let $x\ge 0$ and $y<0$ so that $x=|x|$ and $-y=|y|$ where $-y\in\mathbb{R}$ is the additive inverse of $y\in\mathbb{R}$. $x\cdot y\le 0$ by Proof 2.4 such that $-(x\cdot y)=|x\cdot y|$. Now consider the following:
+    \begin{align*}
+        |x|\cdot|y| &= x\cdot (-y)          &\text{(Assumptions)} \\
+                    &= x\cdot (-1)\cdot y   &\text{(Proof 1.5)} \\
+                    &= (-1)\cdot (x\cdot y) &\text{(Associativity)} \\
+                    &= -(x\cdot y)          &\text{(Proof 1.5)} \\
+                    &= |x\cdot y|           &\text{(Assumptions)}
+    \end{align*}
+    So we've shown if $x\ge 0$ and $y<0$, without loss of generality, then $|x\cdot y|=|x|\cdot |y|$.
+\end{description}
+Thus, by the cases covering the Law of Trichotomy we have shown that for any elements $x,\in\mathbb{R}$ that $|x\cdot y|=|x|\cdot |y|$.
+\end{proof}
+
+\item[3.2] For $x\in\mathbb{R}$ if $\delta >0$, then $|x|\le \delta \iff -\delta\le x\le \delta$.
+\begin{proof}
+We will prove that $x,\delta\in\mathbb{R}$ and $\delta >0$ satisfy $|x|\le \delta \iff -\delta \le x\le \delta$ where $-\delta\in\mathbb{R}$ is the additive inverse of $\delta$.
+\begin{description}
+    \item[($\implies$)] First we will show that $|x|\le \delta \implies -\delta \le x\le \delta$ for $\delta >0$. Consider the following cases:
+    \begin{description}
+        \item[Case 1] Let $x\ge 0$ and $|x|\le \delta$, such that $x=|x|$. By this assumption $|x|\le \delta\implies x\le \delta$. By Proof 2.1 $\delta > 0\implies -\delta <0$. By the Transitivity axiom $-\delta < x$. So we've shown if $x\ge 0$ and $|x|\le \delta$ then $-\delta <x\le \delta$.
+
+        \item[Case 2] Now let $x<0$ and $|x|\le \delta$, such that $-x=|x|$ where $-x\in\mathbb{R}$ is the additive inverse of $x$. This means by assumptions that $|x|\le \delta\implies -x\le \delta$ which implies $x\ge -\delta$ by Proof 2.1. By the Transitivity axiom shows that $x<\delta$ as $x<0$ and $0<\delta$. So we've shown if $x<0$ and $|x|\le \delta$ then $-\delta <x\le \delta$.
+    \end{description}
+    Thus, we've shown for any element $x\in\mathbb{R}$ if $\delta >0$ then $|x|\le \delta\implies -\delta \le x\le \delta$.
+    
+    \item[($\impliedby$)] Now we will show that $-\delta \le x\le \delta \implies |x|\le \delta$ for $\delta >0$. Consider the following cases:
+    \begin{description}
+        \item[Case 1] Let $x\ge 0$ and $-\delta \le x\le \delta$, such that $x=|x|$. This shows that $x\le \delta\implies |x|\le \delta$ by substituting equivalents. So we've shown if $x\ge 0$ and $-\delta <x\le \delta$ then $|x|\le \delta$.
+        
+        \item[Case 2] Let $x<0$ and $-\delta \le x\le \delta$, such that $-x=|x|$. Consider the following:
+        \begin{align*}
+            -\delta\le x &\implies -x\le \delta  &\text{(Proof 2.1)} \\
+                         &\implies |x|\le \delta &\text{(Assumptions)}
+        \end{align*}
+        So we've shown if $x< 0$ and $-\delta <x\le \delta$ then $|x|\le \delta$.
+    \end{description}
+    Thus, we've shown for any element $x\in\mathbb{R}$ if $\delta >0$ then $-\delta \le x\le \delta\implies |x|\le \delta$.
+\end{description}
+Finally, by showing both directions of implication, we've proven that for any element $x\in\mathbb{R}$ if $\delta >0$ then $|x|\le \delta \iff -\delta \le x\le \delta$.
+\end{proof}
+
+\end{itemize}
+
+\end{document}
