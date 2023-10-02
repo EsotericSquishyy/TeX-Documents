@@ -1,0 +1,166 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage{tensor}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    %\qed
+    }
+\newcommand{\dbar}{d\hspace*{-0.08em}\bar{}\hspace*{0.1em}} %You can use \newcommand to create certain new commands, either abbreviations for other commands or even entirely new ones (like this one)
+\newcommand{\Cl}{\text{Cl}}
+\newcommand{\Int}{\text{Int}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\id}{\text{id}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+%Various possibilities for "types" of question
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{coro}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prob}[theorem]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{eg}{e.g}
+\newtheorem*{recall}{Recall}
+\newtheorem*{fact}{Fact}
+\newtheorem*{notation}{Notation}
+
+\pagestyle{fancyplain}
+\headheight 42pt
+\chead{\textbf{\Large Homework 1}} %This one for assignment name
+\rhead{09.30.23 \\ Jesse Cobb \\ Math 108A} %This one for date/name/class
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+\linespread{1.5}
+
+\begin{document}
+
+\section{Question 1} %Problem 1 goes within this section
+
+\begin{prob} %Can use various commands depending on what exactly a given problem asks you to do
+Using only the axioms of an abelian group, show that the identity element of an abelian group is unique. Show also that the inverse of any given element is unique.
+\end{prob}
+
+\begin{proof}
+We will show that there exists a unique identity element, $e$ in any abelian group, $G$. Attempting to prove by contradiction, let $e'\in G$ be another identity element so that for all elements $x\in G$ satisfy $e'*x=x$ by the identity axiom. Since $e,e'\in G$ we can say $e'*e=e$ and $e*e'=e'$ by the identity axiom. By the commutative axiom $e*e'=e'\implies e'*e=e'$. Thus, since we've shown that $e'*e=e'$ and $e'*e=e$ we have proven the identity element $e$ to be unique as $e'=e$.
+\end{proof}
+
+\begin{proof}
+We will show that the inverse element $y$ is unique given an element $x$ of an abelian group $G$. By the inverse axiom $y*x=e$ where $e\in G$ is the identity element of $G$. In an attempt to prove by contradiction assume there exists a second inverse element $y'\in G$ that satisfies $y'*x=e$ by the inverse axiom. Consider the following:
+\begin{align*}
+	y &= e*y 	&\text{(Identity)} \\
+	  &= y'*x*y 	&\text{(Inverse)} \\
+	  &= y'*(y*x)	&\text{(Commutative)} \\
+	  &= y'*e	&\text{(Inverse)} \\
+	  &= y'		&\text{(Identity)}
+\end{align*}
+Thus, we've shown that $y=y'$ which means that the the inverse element $y$ with respect to the element $x$ is unique.
+\end{proof}
+
+
+\section{Question 2} %Problem 2 goes within this section
+
+\begin{prob}
+Let $F$ be a field, $0_F\in F$ its additive identity. Let $V$ be a $F$-vector space and $0_V\in V$ denote its identity. Using only the axioms of a field and the axioms of a vector space, show that $$0_F\cdot v=0_V$$ for any $v\in V$. Here the dot denotes the scalar multiplication.
+\end{prob}
+
+\begin{proof}
+We will show that any element $v\in V$ of $F$-vector space $V$ will be equal to $V$'s additive identity $0_V\in V$ if scalar multiplied by $F$'s additive identity $0_F\in F$ such that $0_F\cdot v=0_V$. Consider the following:
+\begin{align*}
+    0_F\cdot v &= (0_F+0_F)\cdot v      &\text{(Additive Identity of $F$)} \\
+               &= 0_F\cdot v+0_F\cdot v &\text{(Distributive)} \\
+\end{align*}
+Now consider the following based on the previous proof that $0_F\cdot v=0_F\cdot v+0_F\cdot v$ and let $-(0_F\cdot v)\in V$ be the additive inverse of $0_F\cdot v$:
+\begin{align*}
+    0_F\cdot v=0_F\cdot v+0_F\cdot v &\implies -(0_F\cdot v)+0_F\cdot v=-(0_F\cdot v)+0_F\cdot v+0_F\cdot v \\
+                                     &\implies 0_V=0_V+0_F\cdot v &\text{(Additive Inverse)} \\
+                                     &\implies 0_V=0_F\cdot v     &\text{(Additive Identity)}
+\end{align*}
+Thus, we've shown that $0_F\cdot v=0_V$ for any element $v\in V$.
+\end{proof}
+
+
+\section{Question 3} %Problem n goes within this section
+
+\begin{prob}
+    Let $F$ be a field and $V$ be a vector space. Using only the axioms of a vector space, show that for any $\alpha\in F\backslash\{0\}$ and $u,v\in V$, there exists a unique $w\in V$ such that $$u+\alpha w=v.$$
+\end{prob}
+
+\begin{proof}
+We will show that for any $\alpha\in F\backslash \{0\}$ and any $u,v\in V$ there exists a unique $w\in V$ that satisfies $u+\alpha w=v$, where $F$ is a field and $V$ is an $F$-vector space. Seeking a contradiction, let $w'$ be a different solution such that $u+\alpha w'=v$ and $w\ne w'$ so that $u+\alpha w=v=u+\alpha w'$. Assume $-u\in V$ is the additive inverse of $u$ and $1/\alpha \in F\backslash \{0\}$ is the multiplicative inverse of $\alpha$. Consider the following:
+\begin{align*}
+    u+\alpha w=u+\alpha w' &\implies (-u)+u+\alpha w=(-u)+u+\alpha w' \\
+                           &\implies 0_V+\alpha w=0_V+\alpha w' &\text{(Additive Inverse)} \\
+                           &\implies \alpha w=\alpha w' &\text{(Additive Identity)} \\
+                           &\implies (1/\alpha)(\alpha w)=(1/\alpha)(\alpha w) \\
+                           &\implies ((1/\alpha)\alpha) w=((1/\alpha)\alpha) w &\text{(Associativity)} \\
+                           &\implies 1_Fw=1_Fw' &\text{(Multiplicative Inverse)} \\
+                           &\implies w=w' &\text{(Multiplicative Identity)}
+\end{align*}
+Thus, we've shown that $w=w'$ which is a contradiction that proves that the solution $w\in V$ to $u+\alpha w=v$ is unique relative to the elements $u,v\in V$ and $\alpha \in F\backslash\{0\}$. 
+\end{proof}
+
+
+\section{Question 4} %Problem n goes within this section
+
+\begin{prob}
+	Let $\mathbb{C}$ be the field of complex numbers and $i\in\mathbb{C}$ be an element satisfying $i^2=-1$. Given $a,b\in\mathbb{R}$ not both zero, find $c,d\in\mathbb{R}$ such that $$\frac1{a+bi}=c+di.$$
+\end{prob}
+
+\begin{sol}
+	\begin{align*}
+		\frac1{a+bi} &= \frac1{a+bi}\left(\frac{a-bi}{a-bi}\right) \\
+			     &= \frac{a-bi}{a^2+b^2} \\
+			     &= \frac a{a^2+b^2}-\frac b{a^2+b^2}i \\
+              &= c+di
+	\end{align*}
+ By equivalence of real and imaginary parts:
+	$$c=\frac a{a^2+b^2}\qquad d=-\frac b{a^2+b^2}$$
+\end{sol}
+
+
+\section{Question 5} %Problem n goes within this section
+
+\begin{prob}
+Show that the set $\{0,1\}$ under addition and multiplication is a field where we require that $1+1=0$.
+\end{prob}
+
+\begin{proof}
+We will show that for the set $X=\{0,1\}$ to be considered a field we require that $1+1=0$. The additive behavior of $0$ is determined by the axioms of a field so $0+1=1+0=1$ and $0+0=0$ by the additive identity axiom. By that same token the multiplicative behavior of $1$ is already determined $1\cdot 0=0\cdot 1=0$ and $1\cdot 1=1$ by the multiplicative identity axiom. We have shown $0\cdot a=0$ by Proof 2 as $X$ is an $X$-vector space. Finally we must find the behavior of $1+1\in X$. Seeking a contradiction let $1+1=1$. By adding the additive inverse to both sides we find $1+0=0\implies 1=0$, which results in a contradiction. Thus we've proven that the set $\{0,1\}$ is a field when $1+1=0$ by contradiction and by showing all other additive and multiplicative relationships operate as expected under the axioms of a field.
+\end{proof}
+
+
+\end{document}
