@@ -1,0 +1,172 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage{tensor}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    %\qed
+    }
+\newcommand{\dbar}{d\hspace*{-0.08em}\bar{}\hspace*{0.1em}}
+\newcommand{\Cl}{\text{Cl}}
+\newcommand{\Int}{\text{Int}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\id}{\text{id}}
+\newcommand{\im}{\text{Im}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+%Various possibilities for "types" of question
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{coro}[theorem]{Corollary}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prob}[theorem]{Problem}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{eg}{e.g}
+\newtheorem*{recall}{Recall}
+\newtheorem*{fact}{Fact}
+\newtheorem*{notation}{Notation}
+
+\pagestyle{fancyplain}
+\headheight 42pt
+\chead{\textbf{\Large Homework 2}}
+\rhead{10.07.23 \\ Jesse Cobb \\ Math 108A}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+\linespread{1.5}
+
+\begin{document}
+
+\section{Question 1}
+
+\begin{prob} 
+Let $F$ be a field. Show that the additive inverse of an element $\alpha\in F$ is equal to $(-1_F)\cdot\alpha$ where $-1_F\in F$ denotes the additive inverse of the multiplicative identity $1_F\in F$.
+\end{prob}
+
+\begin{proof}
+    We will show that the additive inverse of any element $\alpha\in F$ is equal to $(-1_F)\cdot \alpha$ where $-1_F\in F$ is the additive inverse of the multiplicative inverse $1_F\in F$. Consider the following:
+    \begin{align*}
+        0_F &= 0_F\cdot \alpha            &\text{(Rem I.1.2)} \\
+            &= (1_F+(-1_F))\cdot \alpha   &\text{(Additive Inverse)} \\
+            &= 1_F\cdot \alpha +(-1_F)\cdot \alpha &\text{(Distributive)} \\
+            &= \alpha+(-1_F)\cdot\alpha   &\text{(Multiplicative Identity)}
+    \end{align*}
+    So we've shown that $0_F=\alpha+(-1_F)\cdot\alpha$. With this proven consider the following:
+    \begin{align*}
+        0_F=\alpha+(-1_F)\cdot\alpha &\implies (-\alpha)+0_F=(-\alpha)+\alpha+(-1_F)\cdot\alpha \\
+                                     &\implies -\alpha= (-\alpha)+\alpha+(-1_F)\cdot\alpha &\text{(Additive Identity)} \\
+                                     &\implies -\alpha= 0_F+(-1_F)\cdot\alpha &\text{(Additive Inverse)} \\
+                                     &\implies -\alpha= (-1_F)\cdot\alpha &\text{(Additive Identity)}
+    \end{align*}
+    Thus we've shown that since $0_F=\alpha+(-1_F)\cdot\alpha$ we can say $-\alpha= (-1_F)\cdot\alpha$ for any element $\alpha\in F$.
+\end{proof}
+
+\section{Question 2}
+
+Let $G$ be an abelian group with binary operation $*$.
+\begin{definition}
+    We say that a subset $H$ of $G$ is a  subgroup of $G$ if $*:G\times G\to G$ restricts to a map $*:H\times H\to H$ such that $(H,*)$ is an abelian group on its own.
+\end{definition}
+
+\begin{prob}
+Can the identity element of a subgroup of $G$ be different from the identity element of $G$? If yes, give an example. If not, give a proof using only the axioms of an abelian group and the definition of a subgroup.
+\end{prob}
+
+\begin{proof}
+    We will prove that the identity element of $H$, a subgroup of $G$, is the same as the identity element of $G$, where $1_H\in H,G$ and $1_H\in G$ are the respective identity elements. By the definition of a subgroup we can say that $1_H\in G$ since $H\subseteq G$. Let $1_H^{-1}\in G$ be the inverse of $1_H$ in $G$ so that $1_H\cdot (1_H^{-1})=1_G$. Consider the following in $G$:
+    \begin{align*}
+        1_H &= 1_G\cdot 1_H                  &\text{(Identity of $G$)} \\
+            &= (1_H\cdot(1_H^{-1}))\cdot 1_H &\text{(Inverse in $G$)} \\
+            &= (1_H^{-1})\cdot 1_H           &\text{(Identity of $H$)} \\
+            &= 1_G                           &\text{(Identity of $G$)}
+    \end{align*}
+    Thus, we've shown that the identity elements of $H$ and $G$ are equal, $1_H=1_G$, proving that a subgroup $H$ has the same identity element as a group $G$.
+\end{proof}
+
+\begin{prob}
+Prove that a non-empty subset $H$ of $G$ forms a subgroup of $G$ if and only if for all $x,y\in H$, we have $$x*(y^{-1})\in H.$$ Here $y^{-1}\in G$ denotes the inverse of $y\in G$.
+\end{prob}
+
+\begin{proof}
+    We will show that a non-empty subset $H$ of $G$ forms of a subgroup of $G$ if and only if for all$x,y\in H$ satisfies $x*(y^{-1})\in H$ where $y^{-1}\in G$ is the inverse of $y$ as an element of $G$. First let $H$ be a subgroup of $G$. Since $H$ is a group and $x,y\in H$ there exists a $y^{-1}\in H$ by the inverse axiom. Thus $x*(y^{-1})\in H$ by the axiom of closure for abelian groups. Now in order to prove the other direction now assume $x*(y^{-1})\in H$ for all $x,y\in H$. Let $y=x$ so that $x*(x^{-1})=1_H\in H$ fulfilling the inverse axiom. Now let $x=1_H$ so that $1_H*(y^{-1})=y^{-1}\in H$ fulfilling the identity axiom. Since we now know $y^{-1}\in H$ it is true that $x*(y^{-1})^{-1}=x*y\in H$ fulfilling the closure axiom and commutativity comes trivially by swapping the $x$ and $y$. Thus we've with both direction that a non-empty subset $H$ of $G$ forms of a subgroup of $G$ if and only if for all$x,y\in H$ satisfies $x*(y^{-1})\in H$.
+\end{proof}
+
+\section{Question 3}
+
+\begin{prob}
+Let $V$ be an $F$-vector space. Using the axioms of a vector space and the principle of mathematical induction, show that for any $\alpha\in F$ and $v_1,v_2,\ldots,v_n\in V$ (where $n\ge 1$ is a positive integer), we have $$\alpha(v_1+\cdots+v_n)=\alpha v_1+\cdots+\alpha v_n.$$
+\end{prob}
+
+\begin{proof}
+    We will show, by the Principle of Mathematical Induction, that for any $\alpha\in F$ and $v_1,\ldots,v_n\in V$, where $V$ is an $F$-vector space, that $\alpha(v_1+\cdots+v_n)=\alpha v_1+\cdots+\alpha v_n$ for any $n\in\mathbb{N}$. First note that if $n=1$ then $\alpha(v_1)=\alpha v_1$ is trivially true. Now assume that for some $n\in\mathbb{N}$ then $\alpha(v_1+\cdots+v_n)=\alpha v_1+\cdots+\alpha v_n$ is true. Now consider the $n+1$ case, where $v_{n+1}\in V$:
+    \begin{align*}
+        \alpha(v_1+\cdots+v_n+v_{n+1}) &= \alpha((v_1+\cdots+v_n)+v_{n+1}) &\text{(Associativity)} \\
+                                       &= \alpha(v_1+\cdots+v_n)+\alpha v_{n+1} &\text{(Distributive)} \\
+                                       &= \alpha v_1+\cdots+\alpha v_n+\alpha v_{n+1} &\text{(Induction Hypothesis)}
+    \end{align*}
+    So, we've shown that for $v_1,\ldots,v_{n+1}\in V$ and any $\alpha \in F$ that the $n+1$ case, $\alpha(v_1+\cdots+v_n+v_{n+1})+\alpha v_1+\cdots+\alpha v_{n+1}$, is true. Thus $\alpha(v_1+\cdots+v_n+v_n)+\alpha v_1+\cdots+\alpha v_n$ remains true for any $n\in\mathbb{N}$ by the Principle of Mathematical Induction.
+\end{proof}
+
+\section{Question 4}
+
+\begin{prob}
+Let $V$ be a vector space over some field and $I$ be a set. Let $\{U_\alpha\}_{\alpha\in I}$ be a family of subspaces of $V$ indexed by $I$ (i.e., for each $\alpha\in I$, we are given a subspace $U_\alpha$ of $V$). Using the subspace criterion show that $$\bigcap_{\alpha\in I}U_\alpha$$ is a subspace of $V$.
+\end{prob}
+
+\begin{proof}
+    We will show that for some indexed family of subspaces of $V$ (which is an $F$-vector space), $\{U_\alpha\}_{\alpha\in I}$, indexed by the set $I$ that $\bigcap_{\alpha\in I}U_\alpha$ is also a subspace of $V$. We know that $\bigcap_{\alpha\in I}U_\alpha\ne\varnothing$ since $0_V\in U_\alpha$ for all $\alpha\in I$ because any $U_\alpha$ is a subspace of $V$. Now let $v_1,\ldots,v_n\in\bigcap_{\alpha\in I}U_\alpha$ where $|I|=n$ and $\lambda_1,\ldots,\lambda_n\in F$. By the definition of interception $v_1,\ldots,v_n\in U_\alpha$ and by Prop. II.2.1 $\lambda_1v_1+\cdots+\lambda_nv_n\in U_\alpha$ for any $\alpha\in I$. This implies $\lambda_1v_1+\cdots+\lambda_nv_n\in \bigcap_{\alpha\in I}U_\alpha$ by the definition of intersection. Therefore by Prop. II.2.1 $\bigcap_{\alpha\in I}U_\alpha$ is a subspace of $V$ as it is a non-empty subset of $V$ and is closed under linear combination.
+\end{proof}
+
+\section{Question 5}
+
+\begin{prob}
+Let $U_1,U_2,W$ be subspaces of a vector space $V$ (over some field) such that $$U_1+W=U_2+W.$$ Is it true that $U_1=U_2$?
+\end{prob}
+
+\begin{proof}
+    We will show that given the subspaces $U_1,U_2,W$ of the $F$-vector space $V$ that $U_1+W=U_2+W\not\Rightarrow U_1=U_2$. Consider the following counterexample $U_1=\R,U_2=\{0\},W=\R$ are all subspaces of $V$, where $V=F=\R$. It is trivial that $U_1\ne U_2$. First we must show $U_1,U_2,W$ are valid subspaces of $V=\R$. Since $U_1,U_2,W\ne\varnothing$ and $U_1,U_2,W\subseteq V$ we must now prove closed with respect to linear combination. Let $x\in U_1,W$ and $y=0\in U_2$ and $\lambda\in \R$. Note $\lambda y=0\in U_2$ and $\lambda x\in U_1,W$, which proves $U_1,U_2,W$ are all valid subspaces of $V=\R$. Consider the following:
+    \begin{align*}
+        U_1+W &= \{x+z\mid y\in U_1,z\in W\} \\
+              &= \{x+z\mid x\in \R,z\in \R\} &\text{(Definition of $U_1$ and $W$)}\\
+              &= \{w\mid w\in \R\} &\text{(Sum of Reals)}\\
+              &= \{0+w\mid w\in \R\} &\text{(Identity)}\\
+              &= \{y+w\mid y\in\{0\},w\in\R\}\\
+              &= \{y+w\mid y\in U_2,w\in W\} &\text{(Definition of $U_2$ and $W$)}\\
+              &= U_2+W
+    \end{align*}
+    Thus we've shown that $U_1+W=U_2+W\not\Rightarrow U_1+U_2$ for the subspaces $U_1,U_2,W$ of the $F$-vector space $V$ by showing a valid counterexample.
+\end{proof}
+
+
+\end{document}
